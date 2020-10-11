@@ -1,0 +1,315 @@
+<template>
+  <div class="App__shell">
+    <div v-if="!readMore" class="App__start">
+      <Card @click="showFlip = false">
+        <template #front>
+          <div class="App__cardFront">
+            <div class="App__cardPrompt" v-if="showFlip">
+              Click Me!
+            </div>
+            <div class="App__cardFrontIcon"></div>
+            <header>
+              <h1 class="App__cardName App__cardFirstName">
+                SALMON<span class="App__cardFirstNameSub">(CHIN-AN)</span>
+              </h1>
+              <h1 class="App__cardName">WU</h1>
+            </header>
+          </div>
+        </template>
+        <template #back>
+          <div class="App__back">
+            <ul class="App__backList">
+              <li>THEY/THEM</li>
+              <li><span class="App__backList--long">SOFTWARE DEV</span></li>
+              <li>TORONTO-BASED</li>
+            </ul>
+
+            <ul class="App__backLinks">
+              <li>
+                <a
+                  class="App__backLink"
+                  href="https://github.com/chinanwu"
+                  title="Salmon (Chin-An) Wu's github page"
+                >
+                  <div class="App__backIcon" aria-labelledby="githubLink"></div>
+                  <span id="githubLink">Github</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  class="App__backLink"
+                  href="https://linkedin.com/in/chinanwu"
+                  title="Salmon (Chin-An) Wu's LinkedIn page"
+                >
+                  <div
+                    class="App__backIcon"
+                    aria-labelledby="linkedInLink"
+                  ></div>
+                  <span id="linkedInLink">LinkedIn</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  class="App__backLink"
+                  href="mailto:cawudev@gmail.com"
+                  title="Salmon (Chin-An) Wu's email address"
+                >
+                  <div class="App__backIcon" aria-labelledby="emailLink"></div>
+                  <span id="emailLink">Email</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </template>
+      </Card>
+      <div class="App__readMore" @click="handleClick">
+        <div class="App__bracket App__bracket--left"></div>
+        <button class="App__readMoreBtn">READ MORE</button>
+        <div class="App__bracket App__bracket--right"></div>
+      </div>
+    </div>
+    <div v-else>
+      Other
+    </div>
+  </div>
+</template>
+
+<script>
+import Card from "@/components/Card";
+export default {
+  name: "App",
+  components: { Card },
+  data() {
+    return {
+      readMore: sessionStorage.getItem("readMore")
+        ? JSON.parse(sessionStorage.getItem("readMore"))
+        : false,
+      showFlip: true
+    };
+  },
+  methods: {
+    handleClick() {
+      this.readMore = true;
+      sessionStorage.setItem("readMore", "true");
+    }
+  }
+};
+</script>
+
+<style lang="less">
+* {
+  font-family: "Roboto Mono", sans-serif;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 1.4rem;
+}
+
+h1 {
+  font-size: 2.4rem;
+  margin: 0;
+  padding: 1rem;
+}
+
+h2 {
+  font-size: 2rem;
+  margin: 0;
+  padding: 1rem;
+}
+
+h3 {
+  font-size: 1.8rem;
+  margin: 0;
+  padding: 1rem;
+}
+
+h4 {
+  font-size: 1.6rem;
+  margin: 0;
+  padding: 1rem;
+}
+
+p {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.--no-margin {
+  margin: 0;
+}
+
+#app {
+  height: 100%;
+}
+</style>
+
+<style lang="less" scoped>
+@import "./styling/colours.less";
+
+.App__shell {
+  height: 100%;
+}
+
+.App__start {
+  height: 100%;
+  background-color: @grey-06;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.App__cardFront {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.App__cardPrompt {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.App__cardFrontIcon {
+  width: 137px;
+  height: 137px;
+  border: 1px solid @grey-03;
+  border-radius: 50%;
+  background-color: @grey-06;
+}
+
+.App__cardName {
+  font-size: 3.6rem;
+}
+
+.App__cardFirstName {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 0;
+}
+
+.App__cardFirstNameSub {
+  font-size: 1.8rem;
+  color: @grey-02;
+}
+
+.App__readMore {
+  margin-top: 4rem;
+  display: flex;
+}
+
+@bracket-width: 5px;
+
+.App__bracket {
+  width: 2rem;
+  border-top: @bracket-width solid @grey-05;
+  border-bottom: @bracket-width solid @grey-05;
+}
+
+.App__bracket--left {
+  border-left: @bracket-width solid @grey-05;
+}
+
+.App__bracket--right {
+  border-right: @bracket-width solid @grey-05;
+}
+
+.App__readMoreBtn {
+  border: none;
+  background-color: inherit;
+  font-size: 3.6rem;
+  color: @grey-01;
+  cursor: pointer;
+  margin: 1rem;
+}
+
+.App__readMore:hover > .App__readMoreBtn,
+.App__readMore > .App__readMoreBtn:focus {
+  transition: all 0.2s;
+  font-size: 4.4rem;
+  box-shadow: rgba(255, 255, 255, 0.5) 0 -12rem 0 inset;
+}
+
+@media (prefers-reduced-motion) {
+  .App__readMore:hover > .App__readMoreBtn {
+    transition: none;
+  }
+}
+
+.App__back {
+  width: 100%;
+}
+
+.App__backLinks {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  justify-content: space-evenly;
+}
+
+.App__backLink {
+  display: flex;
+  align-items: center;
+}
+
+.App__backIcon {
+  width: 32px;
+  height: 32px;
+  border: 1px solid black;
+  border-radius: 50%;
+  margin-right: 1rem;
+}
+
+.App__backList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: 2.4rem;
+  line-height: 200%;
+  text-align: center;
+}
+
+.App__backList--long::after {
+  content: "ELOPER";
+}
+
+@media only screen and (max-width: 500px) {
+  .App__cardFront {
+    flex-direction: column;
+  }
+
+  .App__backList--long::after {
+    content: "";
+  }
+
+  .App__backLinks {
+    position: absolute;
+    top: 1rem;
+  }
+
+  .App__backGithub::after,
+  .App__backLinkedIn::after,
+  .App__backEmail::after {
+    content: "";
+  }
+}
+</style>
