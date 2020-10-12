@@ -32,7 +32,7 @@
                   title="Salmon (Chin-An) Wu's github page"
                 >
                   <div class="App__backIcon" aria-labelledby="githubLink"></div>
-                  <span id="githubLink">Github</span>
+                  <span id="githubLink" class="App__backLabel">Github</span>
                 </a>
               </li>
               <li>
@@ -45,7 +45,7 @@
                     class="App__backIcon"
                     aria-labelledby="linkedInLink"
                   ></div>
-                  <span id="linkedInLink">LinkedIn</span>
+                  <span id="linkedInLink" class="App__backLabel">LinkedIn</span>
                 </a>
               </li>
               <li>
@@ -55,7 +55,7 @@
                   title="Salmon (Chin-An) Wu's email address"
                 >
                   <div class="App__backIcon" aria-labelledby="emailLink"></div>
-                  <span id="emailLink">Email</span>
+                  <span id="emailLink" class="App__backLabel">Email</span>
                 </a>
               </li>
             </ul>
@@ -68,17 +68,17 @@
         <div class="App__bracket App__bracket--right"></div>
       </div>
     </div>
-    <div v-else>
-      Other
-    </div>
+    <MainScreen v-else />
   </div>
 </template>
 
 <script>
 import Card from "@/components/Card";
+import MainScreen from "@/components/MainScreen";
+
 export default {
   name: "App",
-  components: { Card },
+  components: { MainScreen, Card },
   data() {
     return {
       readMore: sessionStorage.getItem("readMore")
@@ -146,6 +146,12 @@ h4 {
 p {
   padding-left: 1rem;
   padding-right: 1rem;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 .--no-margin {
@@ -259,9 +265,6 @@ p {
 
 .App__backLinks {
   display: flex;
-  list-style: none;
-  margin: 0;
-  padding: 0;
   width: 100%;
   justify-content: space-evenly;
 }
@@ -276,13 +279,13 @@ p {
   height: 32px;
   border: 1px solid black;
   border-radius: 50%;
-  margin-right: 1rem;
+}
+
+.App__backLabel {
+  margin-left: 1rem;
 }
 
 .App__backList {
-  list-style: none;
-  margin: 0;
-  padding: 0;
   font-size: 2.4rem;
   line-height: 200%;
   text-align: center;
@@ -306,10 +309,30 @@ p {
     top: 1rem;
   }
 
-  .App__backGithub::after,
-  .App__backLinkedIn::after,
-  .App__backEmail::after {
-    content: "";
+  .App__backLabel {
+    display: none;
+  }
+
+  @bracket-width-small: 3px;
+
+  .App__bracket {
+    border-top: @bracket-width-small solid @grey-05;
+    border-bottom: @bracket-width-small solid @grey-05;
+  }
+
+  .App__bracket--left {
+    border-left: @bracket-width-small solid @grey-05;
+  }
+
+  .App__bracket--right {
+    border-right: @bracket-width-small solid @grey-05;
+  }
+
+  .App__readMore:hover > .App__readMoreBtn,
+  .App__readMore > .App__readMoreBtn:focus {
+    transition: all 0.2s;
+    font-size: 4rem;
+    box-shadow: rgba(255, 255, 255, 0.5) 0 -12rem 0 inset;
   }
 }
 </style>
