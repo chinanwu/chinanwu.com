@@ -104,6 +104,7 @@ export default {
 html,
 body {
   height: 100%;
+  min-height: 100%;
   width: 100%;
   margin: 0;
   padding: 0;
@@ -154,12 +155,51 @@ ul {
   padding: 0;
 }
 
+button {
+  color: black;
+  border: none;
+  background-color: inherit;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+}
+
 .--no-margin {
   margin: 0;
 }
 
 #app {
   height: 100%;
+}
+
+.headerLabel {
+  font-size: 4rem;
+  padding: 0;
+  text-align: center;
+}
+
+@media only screen and (max-width: 595px) {
+  .headerLabel {
+    font-size: 3.6rem;
+  }
+}
+
+@media only screen and (max-width: 510px) {
+  .headerLabel {
+    font-size: 3rem;
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  .headerLabel {
+    font-size: 2.8rem;
+  }
+}
+
+@media (prefers-reduced-motion) {
+  * {
+    transition: none;
+  }
 }
 </style>
 
@@ -238,11 +278,8 @@ ul {
 }
 
 .App__readMoreBtn {
-  border: none;
-  background-color: inherit;
   font-size: 3.6rem;
   color: @grey-01;
-  cursor: pointer;
   margin: 1rem;
 }
 

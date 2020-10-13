@@ -42,8 +42,7 @@ export default {
     },
     handleKeyDown(event) {
       if (
-        event &&
-        event.keyCode &&
+        event?.keyCode && // Super cool thing I learned literally hours ago
         !event.shiftKey &&
         !event.ctrlKey &&
         !event.altKey &&

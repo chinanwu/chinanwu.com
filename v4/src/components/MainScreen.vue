@@ -1,14 +1,18 @@
 <template>
   <div>
     <header class="Main__header">
-      <h1 class="Main__headerName">SALMON</h1>
+      <h1 class="Main__headerName">
+        <span class="Main__headerName--highlight">SALMON</span>
+      </h1>
       <ul class="Main__headerList">
-        <li class="Main__headerListItem">THEY/THEM</li>
         <li class="Main__headerListItem">
-          <span class="Main__headerListItemSD">SOFTWARE DEV</span>
+          <span class="Main__headerPronouns">THEY/THEM</span>
         </li>
         <li class="Main__headerListItem">
-          <span class="Main__headerListItemTO">TORONTO</span>
+          <span class="Main__headerSoftwareDev">SOFTWARE DEV</span>
+        </li>
+        <li class="Main__headerListItem">
+          <span class="Main__headerToronto">TORONTO</span>
         </li>
       </ul>
     </header>
@@ -16,21 +20,40 @@
     <Separator />
     <TableOfContents
       :contents="[
-        { label: 'Projects', link: 'project' },
-        { label: 'Work', link: 'work' },
-        { label: 'Contact', link: 'contact' }
+        {
+          label: 'PROJECTS',
+          link: 'projects',
+          title: 'Projects section of webpage',
+          focusId: 'aNM-btn-0' // unfortunate
+        },
+        {
+          label: 'WORK',
+          link: 'work',
+          title: 'Work section of webpage',
+          focusId: ''
+        },
+        {
+          label: 'CONTACT',
+          link: 'contact',
+          title: 'Contact section of webpage',
+          focusId: ''
+        }
       ]"
     />
+    <Separator />
+
+    <Projects />
     <Separator />
   </div>
 </template>
 
 <script>
+import Projects from "@/components/Projects";
 import Separator from "@/components/Separator";
 import TableOfContents from "@/components/TableOfContents";
 export default {
   name: "MainScreen",
-  components: { TableOfContents, Separator }
+  components: { Projects, TableOfContents, Separator }
 };
 </script>
 
@@ -44,6 +67,17 @@ export default {
   letter-spacing: 3rem;
 }
 
+.Main__headerName--highlight {
+  // May remove
+  padding-left: 3rem;
+  transition: all 0.2s;
+
+  &:focus,
+  &:hover {
+    box-shadow: rgb(253, 228, 131) 56rem 0 0 inset;
+  }
+}
+
 .Main__headerList {
   display: flex;
   justify-content: center;
@@ -51,56 +85,105 @@ export default {
   letter-spacing: 0.3rem;
 }
 
-.Main__headerListItem::after {
-  content: "\00a0|\00a0";
+.Main__headerListItem {
+  &::after {
+    content: "\00a0|\00a0";
+  }
+
+  &:nth-child(3)::after {
+    content: "";
+  }
+
+  & > span {
+    padding-left: 0.3rem; // To counter the letter-spacing
+  }
 }
 
-.Main__headerListItem:nth-child(3)::after {
-  content: "";
+.Main__headerPronouns {
+  transition: all 0.2s;
+
+  // A hack to "animate" the gradient background
+  box-shadow: white 0 5rem 0 inset;
+
+  &:hover {
+    box-shadow: none;
+
+    background: rgb(255, 105, 105);
+    background: linear-gradient(
+      90deg,
+      rgba(255, 105, 105, 1) 0%,
+      rgba(255, 181, 75, 1) 12%,
+      rgba(252, 255, 127, 1) 28%,
+      rgba(165, 247, 158, 1) 45%,
+      rgba(130, 242, 231, 1) 59%,
+      rgba(152, 159, 252, 1) 72%,
+      rgba(234, 153, 235, 1) 85%,
+      rgba(255, 146, 146, 1) 100%
+    );
+  }
 }
 
-.Main__headerListItemSD::after {
-  content: "ELOPER";
+.Main__headerSoftwareDev {
+  transition: all 0.2s;
+
+  &:hover {
+    box-shadow: black 0 -5rem 0 inset;
+    color: #24b424;
+  }
+
+  &::after {
+    content: "ELOPER";
+  }
 }
 
-.Main__headerListItemTO::after {
-  content: "-BASED";
+.Main__headerToronto {
+  transition: all 0.2s;
+
+  &:hover {
+    // Toronto's blue!
+    box-shadow: #24448f 0 -5rem 0 inset;
+    color: white;
+  }
+
+  &::after {
+    content: "-BASED";
+  }
 }
 
-@media only screen and (max-width: 1140px) {
-  .Main__headerListItemTO::after {
+@media only screen and (max-width: 1150px) {
+  .Main__headerToronto::after {
     content: "";
   }
 }
 
 @media only screen and (max-width: 1010px) {
-  .Main__headerListItemSD::after {
+  .Main__headerSoftwareDev::after {
     content: "";
   }
 }
 
-@media only screen and (max-width: 840px) {
+@media only screen and (max-width: 860px) {
   .Main__headerList {
     font-size: 2.4rem;
   }
 
-  .Main__headerListItemSD::after {
+  .Main__headerSoftwareDev::after {
     content: "ELOPER";
   }
 
-  .Main__headerListItemTO::after {
+  .Main__headerToronto::after {
     content: "-BASED";
   }
 }
 
 @media only screen and (max-width: 810px) {
-  .Main__headerListItemTO::after {
+  .Main__headerToronto::after {
     content: "";
   }
 }
 
 @media only screen and (max-width: 700px) {
-  .Main__headerListItemSD::after {
+  .Main__headerSoftwareDev::after {
     content: "";
   }
 }
@@ -116,11 +199,11 @@ export default {
     content: "";
   }
 
-  .Main__headerListItemSD::after {
+  .Main__headerSoftwareDev::after {
     content: "ELOPER";
   }
 
-  .Main__headerListItemTO::after {
+  .Main__headerToronto::after {
     content: "-BASED";
   }
 }
@@ -141,7 +224,7 @@ export default {
     font-size: 6.4rem;
   }
 
-  .Main__headerListItemSD::after {
+  .Main__headerSoftwareDev::after {
     content: "";
   }
 }

@@ -1,5 +1,7 @@
 <template>
-  <div class="Separator" role="presentation"></div>
+  <div class="Separator__container" role="presentation">
+    <div class="Separator"></div>
+  </div>
 </template>
 
 <script>
@@ -9,9 +11,15 @@ export default {
 </script>
 
 <style lang="less" scoped>
+.Separator__container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
 .Separator {
   margin: 3rem;
-  border-bottom: 1px solid #f2f2f2;
+  border-bottom: 2px solid #f2f2f2;
   width: 60%;
 }
 
