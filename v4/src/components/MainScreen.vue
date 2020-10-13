@@ -182,13 +182,17 @@ export default {
   }
 }
 
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: 705px) {
   .Main__headerSoftwareDev::after {
     content: "";
   }
 }
 
 @media only screen and (max-width: 595px) {
+  .Main__headerName--highlight {
+    padding-left: 0;
+  }
+
   .Main__headerList {
     display: initial;
     line-height: 150%;

@@ -45,7 +45,13 @@ export const projects = [
     github: "https://github.com/chinanwu/dragons-n-dungeons",
     technologies: {
       frontend: "React, Redux, Jest, Webpack, Babel, Less"
-    }
+    },
+    features: [
+      "Auto-updates fields related to change applied",
+      "Responsive design that allows for comfy usage no matter the screen size",
+      "Minimized information displayed to counter information overload",
+      "Fun themes"
+    ]
   },
   {
     key: "POMELO-LIB",

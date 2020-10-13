@@ -9,8 +9,8 @@
 
     <div class="Projects__arrowSelectorContainer">
       <ArrowSelector
-        :default="1"
-        :total="items.length"
+        :active="current"
+        :items="items"
         @change="setCurrentFromArrow"
       />
     </div>

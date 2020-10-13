@@ -27,24 +27,30 @@
 export default {
   name: "ArrowSelector",
   props: {
-    default: {
-      type: Number,
-      required: true,
-      validator: value => value > 0
-    },
-    total: {
-      type: Number,
+    active: {
+      type: String,
       required: true
+    },
+    items: {
+      type: Array,
+      required: true,
+      validator: values =>
+        values.every(
+          value => typeof value === "string" || value instanceof String
+        )
     }
   },
-  data() {
-    return {
-      current: this.default
-    };
+  computed: {
+    current() {
+      return this.items.indexOf(this.active) + 1;
+    },
+    total() {
+      return this.items.length;
+    }
   },
   methods: {
     setCurrent(next) {
-      this.current = next;
+      // this.current = next;
       this.$emit("change", next);
     },
     handleLeftArrow() {

@@ -22,8 +22,6 @@
       </button>
     </li>
   </ul>
-
-  {{ active }}
 </template>
 
 <script>
@@ -45,20 +43,17 @@ export default {
       default: null // will be computed as first item
     }
   },
-  data() {
-    return {
-      selected: this.active ? this.items.indexOf(this.active) : 0
-    };
-  },
   computed: {
     activeDescendant() {
       return "aNM-" + this.selected + "-" + this.items[this.selected];
+    },
+    selected() {
+      return this.active ? this.items.indexOf(this.active) : 0;
     }
   },
   methods: {
     setSelected(i) {
       this.$emit("selected", this.items[i]);
-      this.selected = i;
     },
     handleClick(i) {
       this.setSelected(i);
