@@ -95,6 +95,8 @@ export default {
 </script>
 
 <style lang="less" scoped>
+@import "../styling/colours.less";
+
 .ArrowSelector {
   display: flex;
   flex-direction: column;
@@ -115,7 +117,17 @@ export default {
   border: none;
   font-size: 7.2rem;
   cursor: pointer;
-  color: #c8c8c8;
+  color: @grey-05;
+  transition: color 0.2s;
+
+  &:focus,
+  &:hover {
+    color: @grey-04;
+  }
+
+  &:active {
+    color: @grey-03;
+  }
 }
 
 .ArrowSelector__label {

@@ -36,7 +36,6 @@ export default {
       this.current = next;
     },
     setCurrentFromArrow(nextNum) {
-      console.log(this.items[nextNum - 1]);
       this.current = this.items[nextNum - 1];
     }
   }

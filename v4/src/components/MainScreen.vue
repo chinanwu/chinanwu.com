@@ -1,7 +1,7 @@
 <template>
-  <div>
+  <section aria-labelledby="mainHeader">
     <header class="Main__header">
-      <h1 class="Main__headerName">
+      <h1 id="mainHeader" class="Main__headerName">
         <span class="Main__headerName--highlight">SALMON</span>
       </h1>
       <ul class="Main__headerList">
@@ -40,20 +40,36 @@
         }
       ]"
     />
-    <Separator />
 
-    <Projects />
     <Separator />
-  </div>
+    <Projects />
+
+    <Separator />
+    <Work />
+
+    <Separator />
+    <Contact />
+
+    <Separator />
+    <footer class="Main__footer">
+      <p class="Main__footerWords">
+        Made by: <strong>Salmon (Chin-An) Wu</strong>
+      </p>
+      <p class="Main__footerWords">With: <strong>Vue, Less, JS</strong></p>
+    </footer>
+  </section>
 </template>
 
 <script>
+import Contact from "@/components/Contact";
 import Projects from "@/components/Projects";
 import Separator from "@/components/Separator";
 import TableOfContents from "@/components/TableOfContents";
+import Work from "@/components/Work";
+
 export default {
   name: "MainScreen",
-  components: { Projects, TableOfContents, Separator }
+  components: { Contact, Work, Projects, TableOfContents, Separator }
 };
 </script>
 
@@ -148,6 +164,16 @@ export default {
   &::after {
     content: "-BASED";
   }
+}
+
+.Main__footer {
+  text-align: center;
+  font-size: 1.6rem;
+}
+
+.Main__footerWords {
+  padding: 0;
+  margin: 0;
 }
 
 @media only screen and (max-width: 1150px) {
