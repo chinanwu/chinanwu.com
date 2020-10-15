@@ -22,6 +22,7 @@
     <div class="Work__container">
       <label class="Work__downloadLabel">Resume:</label>
       <button
+        id="workDownload"
         class="Work__download"
         aria-label="Download Salmon's resume"
         @click="openResume"
@@ -44,7 +45,7 @@ export default {
   },
   methods: {
     openResume() {
-      window.open(require("../assets/resume.pdf"));
+      window.open(require("../assets/files/resume.pdf"));
     }
   }
 };

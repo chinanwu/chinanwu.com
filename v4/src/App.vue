@@ -7,7 +7,12 @@
             <div class="App__cardPrompt" v-if="showFlip">
               Click Me!
             </div>
-            <div class="App__cardFrontIcon"></div>
+            <div class="App__cardFrontIcon">
+              <img
+                :src="require('@/assets/images/self.png')"
+                alt="Cartoon drawing of Salmon"
+              />
+            </div>
             <header>
               <h1 class="App__cardName App__cardFirstName">
                 SALMON<span class="App__cardFirstNameSub">(CHIN-AN)</span>
@@ -31,8 +36,12 @@
                   href="https://github.com/chinanwu"
                   title="Salmon (Chin-An) Wu's github page"
                 >
-                  <div class="App__backIcon" aria-labelledby="githubLink"></div>
-                  <span id="githubLink" class="App__backLabel">Github</span>
+                  <img
+                    class="App__backIcon"
+                    :src="require('@/assets/images/github.png')"
+                    alt="Github logo"
+                  />
+                  <span class="App__backLabel">Github</span>
                 </a>
               </li>
               <li>
@@ -41,11 +50,12 @@
                   href="https://linkedin.com/in/chinanwu"
                   title="Salmon (Chin-An) Wu's LinkedIn page"
                 >
-                  <div
+                  <img
                     class="App__backIcon"
-                    aria-labelledby="linkedInLink"
-                  ></div>
-                  <span id="linkedInLink" class="App__backLabel">LinkedIn</span>
+                    :src="require('@/assets/images/linkedin.png')"
+                    alt="LinkedIn logo"
+                  />
+                  <span class="App__backLabel">LinkedIn</span>
                 </a>
               </li>
               <li>
@@ -54,8 +64,11 @@
                   href="mailto:cawudev@gmail.com"
                   title="Salmon (Chin-An) Wu's email address"
                 >
-                  <div class="App__backIcon" aria-labelledby="emailLink"></div>
-                  <span id="emailLink" class="App__backLabel">Email</span>
+                  <img
+                    :src="require('@/assets/images/email.png')"
+                    alt="Email icon"
+                  />
+                  <span class="App__backLabel">Email</span>
                 </a>
               </li>
             </ul>
@@ -239,6 +252,7 @@ button {
   border: 1px solid @grey-03;
   border-radius: 50%;
   background-color: @grey-06;
+  overflow: hidden;
 }
 
 .App__cardName {
@@ -259,6 +273,7 @@ button {
 .App__readMore {
   margin-top: 4rem;
   display: flex;
+  cursor: pointer;
 }
 
 @bracket-width: 5px;
@@ -281,6 +296,7 @@ button {
   font-size: 3.6rem;
   color: @grey-01;
   margin: 1rem;
+  cursor: pointer;
 }
 
 .App__readMore:hover > .App__readMoreBtn,
@@ -288,6 +304,7 @@ button {
   transition: all 0.2s;
   font-size: 4.4rem;
   box-shadow: rgba(255, 255, 255, 0.5) 0 -12rem 0 inset;
+  cursor: pointer;
 }
 
 @media (prefers-reduced-motion) {
@@ -314,8 +331,7 @@ button {
 .App__backIcon {
   width: 32px;
   height: 32px;
-  border: 1px solid black;
-  border-radius: 50%;
+  display: flex;
 }
 
 .App__backLabel {

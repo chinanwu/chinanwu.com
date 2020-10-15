@@ -30,13 +30,13 @@
           label: 'WORK',
           link: 'work',
           title: 'Work section of webpage',
-          focusId: ''
+          focusId: 'workDownload'
         },
         {
           label: 'CONTACT',
           link: 'contact',
           title: 'Contact section of webpage',
-          focusId: ''
+          focusId: 'contactName'
         }
       ]"
     />
