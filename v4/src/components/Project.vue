@@ -53,6 +53,7 @@
 
             <Accordion
               class="Project__accordion"
+              :expand="expand"
               :label="expand ? 'No More Spice' : 'The Spicy Stuff'"
               @change="expand = !expand"
               v-if="details.features || details.faq"
