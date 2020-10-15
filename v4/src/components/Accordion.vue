@@ -7,10 +7,10 @@
       @keydown="handleKeyDown"
     >
       <span>{{ label }}</span>
-      <span>{{ expanded ? "-" : "+" }}</span>
+      <span>{{ expand ? "-" : "+" }}</span>
     </button>
     <transition name="expand" mode="out-in">
-      <slot v-if="expanded" name="content"></slot>
+      <slot v-if="expand" name="content"></slot>
     </transition>
   </div>
 </template>
@@ -28,15 +28,9 @@ export default {
       default: false
     }
   },
-  data() {
-    return {
-      expanded: this.expand
-    };
-  },
   emits: ["change"],
   methods: {
     handleClick() {
-      this.expanded = !this.expanded;
       this.$emit("change");
     },
     handleKeyDown(event) {
