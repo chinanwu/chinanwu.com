@@ -21,11 +21,8 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
-      - name: Install modules
+      - name: Test
         run: |
-            ls
             cd v4
-            ls
             npm i
-      - name: Run tests
-        run: npm run test:unit
+            npm run test:unit
