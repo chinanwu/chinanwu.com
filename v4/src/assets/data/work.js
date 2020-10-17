@@ -1,21 +1,21 @@
 export const work = [
   {
-    title: "SOFTWARE ENGINEER",
+    title: "Software Engineer",
     company: "BlueCat Networks",
     time: { start: "SEP 2020", end: "Present" },
-    stack: "JAVA, AWS"
+    stack: "Java, AWS"
   },
   {
-    title: "SOFTWARE DEVELOPER CO-OP",
+    title: "Software Developer Co-op",
     company: "BlueCat Networks",
     time: { start: "JAN 2019", end: "DEC 2019" },
-    stack: "JAVA, REACT, REDUX, AWS, DOCKER"
+    stack: "Java, React, Redux, AWS, Docker"
   },
   {
-    title: "BACKEND DEVELOPER INTERN",
+    title: "Backend Developer Intern",
     company: "Chefs Plate",
     time: { start: "JAN 2018", end: "SEP 2018" },
-    stack: "PHP, MONGODB, LARAVEL"
+    stack: "PHP, MongoDB, Laravel"
   }
 ];
 

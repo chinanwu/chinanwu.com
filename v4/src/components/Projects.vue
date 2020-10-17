@@ -1,7 +1,7 @@
 <template>
   <section class="Projects" id="projects" aria-labelledby="projectsHeader">
     <header>
-      <h2 id="projectsHeader" class="headerLabel">PROJECTS</h2>
+      <h2 id="projectsHeader" class="headerLabel">Projects</h2>
     </header>
 
     <ArrowNavMenu :items="items" :active="current" @selected="setCurrent" />
@@ -27,8 +27,8 @@ export default {
   components: { ArrowSelector, Project, ArrowNavMenu },
   data() {
     return {
-      items: ["DELTA", "DND", "POMELO-LIB", "SHOWCASE"],
-      current: "DELTA"
+      items: ["delta", "dnd", "pomelo-lib", "showcase"],
+      current: "delta"
     };
   },
   methods: {

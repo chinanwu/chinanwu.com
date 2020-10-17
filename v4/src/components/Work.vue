@@ -11,10 +11,10 @@
           v-for="(job, index) in work"
           :key="'work-' + index"
         >
-          <h3 class="Work__jobTitle">{{ job.title }}</h3>
+          <h3 class="Work__jobTitle --uppercase">{{ job.title }}</h3>
           <p class="Work__jobCompany">{{ job.company }}</p>
           <p class="Work__jobTime">{{ job.time.start }} - {{ job.time.end }}</p>
-          <p class="Work__jobStack">{{ job.stack }}</p>
+          <p class="Work__jobStack --uppercase">{{ job.stack }}</p>
         </li>
       </ul>
     </div>

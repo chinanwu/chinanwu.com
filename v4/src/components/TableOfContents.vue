@@ -1,5 +1,5 @@
 <template>
-  <nav class="TableOfContents" aria-labelledby="toc">
+  <nav class="TableOfContents --uppercase" aria-labelledby="toc">
     <h2 class="headerLabel" id="toc">TABLE OF CONTENTS</h2>
     <ol class="TableOfContents__list" tabindex="0" @keydown="handleKeyDown">
       <li v-for="(content, index) in contents" :key="'tOC-' + index">

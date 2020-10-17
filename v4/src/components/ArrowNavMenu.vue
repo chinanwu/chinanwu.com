@@ -13,7 +13,7 @@
     >
       <button
         :id="'aNM-btn-' + index"
-        class="ArrowNavMenu__item"
+        class="ArrowNavMenu__item --uppercase"
         :class="{ 'ArrowNavMenu__item--selected': selected === index }"
         @click="handleClick(index)"
         @keydown="handleKeyDown"
@@ -94,9 +94,9 @@ export default {
                   0
                 );
                 if (
-                  firstLetter === event.key ||
-                  firstLetter === event.key.toLowerCase() ||
-                  firstLetter === event.key.toUpperCase()
+                  firstLetter.localeCompare(event.key, undefined, {
+                    sensitivity: "accent"
+                  })
                 ) {
                   this.setSelected(temp % this.items.length);
                   return;
@@ -104,9 +104,9 @@ export default {
               } else {
                 const firstLetter = this.items[temp].charAt(0);
                 if (
-                  firstLetter === event.key ||
-                  firstLetter === event.key.toLowerCase() ||
-                  firstLetter === event.key.toUpperCase()
+                  firstLetter.localeCompare(event.key, undefined, {
+                    sensitivity: "accent"
+                  })
                 ) {
                   this.setSelected(temp);
                   return;

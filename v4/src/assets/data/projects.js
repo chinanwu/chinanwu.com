@@ -1,7 +1,7 @@
 export const projects = [
   {
-    key: "DELTA",
-    name: "DELTA",
+    key: "delta",
+    name: "delta",
     description:
       "A simple, yet difficult, word game made with React and Golang.",
     github: "https://github.com/chinanwu/delta-ui",
@@ -38,8 +38,8 @@ export const projects = [
     ]
   },
   {
-    key: "DND",
-    name: "DRAGONS 'N DUNGEONS",
+    key: "dnd",
+    name: "Dragons 'N Dungeons",
     description:
       "An online D&D player sheet with “smart” fields and a responsive design.",
     github: "https://github.com/chinanwu/dragons-n-dungeons",
@@ -54,8 +54,8 @@ export const projects = [
     ]
   },
   {
-    key: "POMELO-LIB",
-    name: "POMELO-LIB",
+    key: "pomelo-lib",
+    name: "pomelo-lib",
     description:
       "A component library that comes in both React and Vue flavour.",
     github: "https://github.com/chinanwu/pomelo-lib",
@@ -65,25 +65,25 @@ export const projects = [
     }
   },
   {
-    key: "SHOWCASE",
-    name: "SHOWCASE",
+    key: "showcase",
+    name: "showcase",
     list: [
       {
-        name: "AFFIRMER",
+        name: "Affirmer",
         description: "A site to made to help users with daily afirmations.",
         madeWith: "Vue",
         github: "https://github.com/chinanwu/affirmer",
         link: "https://chinanwu.github.io/affirmer"
       },
       {
-        name: "MAGNET-POETRY",
+        name: "Magnet-Poetry",
         description: "A fake fridge to make real magnetic poetry with!",
         madeWith: "Vue",
         github: "https://github.com/chinanwu/magnet-poetry",
         link: "https://chinanwu.github.io/magnet-poetry"
       },
       {
-        name: "SOLVER",
+        name: "Solver",
         description:
           "A small go package that finds the optimal solution to Delta problems!",
         madeWith: "Golang",

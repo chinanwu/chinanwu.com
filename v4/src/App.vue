@@ -13,20 +13,20 @@
                 alt="Cartoon drawing of Salmon"
               />
             </div>
-            <header>
+            <header class="--uppercase">
               <h1 class="App__cardName App__cardFirstName">
-                SALMON<span class="App__cardFirstNameSub">(CHIN-AN)</span>
+                Salmon<span class="App__cardFirstNameSub">(Chin-An)</span>
               </h1>
-              <h1 class="App__cardName">WU</h1>
+              <h1 class="App__cardName">Wu</h1>
             </header>
           </div>
         </template>
         <template #back>
-          <div class="App__back">
+          <div class="App__back --uppercase">
             <ul class="App__backList">
-              <li>THEY/THEM</li>
-              <li><span class="App__backList--long">SOFTWARE DEV</span></li>
-              <li>TORONTO-BASED</li>
+              <li>They/Them</li>
+              <li><span class="App__backList--long">Software Dev</span></li>
+              <li>Toronto-Based</li>
             </ul>
 
             <ul class="App__backLinks">
@@ -77,7 +77,7 @@
       </Card>
       <div class="App__readMore" @click="handleClick">
         <div class="App__bracket App__bracket--left"></div>
-        <button class="App__readMoreBtn">READ MORE</button>
+        <button class="App__readMoreBtn --uppercase">Read More</button>
         <div class="App__bracket App__bracket--right"></div>
       </div>
     </div>
@@ -181,6 +181,10 @@ button {
   margin: 0;
 }
 
+.--uppercase {
+  text-transform: uppercase;
+}
+
 #app {
   height: 100%;
 }
@@ -189,6 +193,7 @@ button {
   font-size: 4rem;
   padding: 0;
   text-align: center;
+  text-transform: uppercase;
 }
 
 @media only screen and (max-width: 595px) {
@@ -345,7 +350,7 @@ button {
 }
 
 .App__backList--long::after {
-  content: "ELOPER";
+  content: "eloper";
 }
 
 @media only screen and (max-width: 500px) {

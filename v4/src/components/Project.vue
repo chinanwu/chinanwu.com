@@ -2,18 +2,20 @@
   <section class="Project" aria-labelledby="projectHeader">
     <Brackets>
       <template #content>
-        <section class="Project__content" v-if="name !== 'SHOWCASE'">
+        <section class="Project__content" v-if="name !== 'showcase'">
           <header>
-            <h3 class="headerLabel" id="projectHeader">{{ details.name }}</h3>
+            <h3 class="headerLabel" id="projectHeader">
+              {{ details.name }}
+            </h3>
           </header>
 
           <div class="Project__details">
             <div class="Project__btns">
-              <button class="Project__btn">
-                <a :href="details.github">GITHUB</a>
+              <button class="Project__btn --uppercase">
+                <a :href="details.github">Github</a>
               </button>
               <button
-                class="Project__btn"
+                class="Project__btn --uppercase"
                 :aria-disabled="!details.link"
                 :aria-label="!details.link ? 'Live link coming soon' : null"
               >
@@ -21,7 +23,7 @@
                   :class="{ Project__linkTba: !details.link }"
                   :href="details.link"
                 >
-                  LINK
+                  Link
                 </a>
               </button>
             </div>
@@ -103,7 +105,9 @@
         <div v-else>
           <section aria-labelledby="showcaseHeader">
             <header>
-              <h3 id="showcaseHeader" class="headerLabel">GITHUB SHOWCASE</h3>
+              <h3 id="showcaseHeader" class="headerLabel">
+                Github Showcase
+              </h3>
             </header>
 
             <div class="Project__showcaseProjects">
@@ -114,7 +118,10 @@
                 :aria-labelledby="'showcaseHeader-' + index"
               >
                 <header>
-                  <h4 :id="'showcaseHeader-' + index" class="Project__header">
+                  <h4
+                    :id="'showcaseHeader-' + index"
+                    class="Project__header --uppercase"
+                  >
                     {{ project.name }}
                   </h4>
                 </header>
@@ -126,12 +133,20 @@
                   Made with: <strong>{{ project.madeWith }}</strong>
                 </p>
                 <div class="Project__btns">
-                  <button class="Project__btn">
-                    <a :href="project.github">GITHUB</a>
+                  <button class="Project__btn --uppercase">
+                    <a
+                      :href="project.github"
+                      :title="'Salmon\'s ' + project.name + ' Github page'"
+                    >
+                      Github
+                    </a>
                   </button>
-                  <button class="Project__btn">
-                    <a :href="project.link">
-                      LINK
+                  <button class="Project__btn --uppercase">
+                    <a
+                      :href="project.link"
+                      :title="project.name + '\'s live project page'"
+                    >
+                      Link
                     </a>
                   </button>
                 </div>

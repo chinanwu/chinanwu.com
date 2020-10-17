@@ -1,18 +1,18 @@
 <template>
   <section aria-labelledby="mainHeader">
-    <header class="Main__header">
+    <header class="Main__header --uppercase">
       <h1 id="mainHeader" class="Main__headerName">
-        <span class="Main__headerName--highlight">SALMON</span>
+        <span class="Main__headerName--highlight">Salmon</span>
       </h1>
       <ul class="Main__headerList">
         <li class="Main__headerListItem">
-          <span class="Main__headerPronouns">THEY/THEM</span>
+          <span class="Main__headerPronouns">They/Them</span>
         </li>
         <li class="Main__headerListItem">
-          <span class="Main__headerSoftwareDev">SOFTWARE DEV</span>
+          <span class="Main__headerSoftwareDev">Software Dev</span>
         </li>
         <li class="Main__headerListItem">
-          <span class="Main__headerToronto">TORONTO</span>
+          <span class="Main__headerToronto">Toronto</span>
         </li>
       </ul>
     </header>
@@ -21,19 +21,19 @@
     <TableOfContents
       :contents="[
         {
-          label: 'PROJECTS',
+          label: 'Projects',
           link: 'projects',
           title: 'Projects section of webpage',
           focusId: 'aNM-btn-0' // unfortunate
         },
         {
-          label: 'WORK',
+          label: 'Work',
           link: 'work',
           title: 'Work section of webpage',
           focusId: 'workDownload'
         },
         {
-          label: 'CONTACT',
+          label: 'Contact',
           link: 'contact',
           title: 'Contact section of webpage',
           focusId: 'contactName'

@@ -31,7 +31,7 @@
 
     <div class="Contact__additional">
       <h3 class="headerLabel">Or, find me on:</h3>
-      <ul class="Contact__additionalLinks">
+      <ul class="Contact__additionalLinks --uppercase">
         <li>
           <a
             class="Contact__additionalLink"

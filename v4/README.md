@@ -26,6 +26,7 @@ To see higher-def photos, visit the `/other/desktop` folder within the repo
 ## Known Issues/Improvements
 - Card click on link shouldn't flip
 - Animation for switch to main screen
+- Internalization
 
 ## Resources
 
