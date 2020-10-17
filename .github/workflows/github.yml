@@ -23,7 +23,9 @@ jobs:
       - uses: actions/checkout@v2
       - name: Install modules
         run: |
+            ls
             cd v4
+            ls
             npm i
       - name: Run tests
         run: npm run test:unit
