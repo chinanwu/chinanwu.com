@@ -27,6 +27,8 @@
 <script>
 // TODO: role menu vs menubar - Dynamic setting via window size maybe?
 
+import validEvent from "@/functions/validEvent";
+
 export default {
   name: "ArrowNavMenu",
   props: {
@@ -59,13 +61,7 @@ export default {
       this.setSelected(i);
     },
     handleKeyDown(event) {
-      if (
-        event?.key &&
-        !event.shiftKey &&
-        !event.ctrlKey &&
-        !event.altKey &&
-        !event.metaKey
-      ) {
+      if (validEvent(event, [])) {
         // https://www.w3.org/TR/wai-aria-practices/examples/menu-button/menu-button-actions-active-descendant.html
         if (event.key === "ArrowDown" || event.key === "ArrowRight") {
           event.preventDefault();
@@ -96,7 +92,7 @@ export default {
                 if (
                   firstLetter.localeCompare(event.key, undefined, {
                     sensitivity: "accent"
-                  })
+                  }) === 0
                 ) {
                   this.setSelected(temp % this.items.length);
                   return;
@@ -106,7 +102,7 @@ export default {
                 if (
                   firstLetter.localeCompare(event.key, undefined, {
                     sensitivity: "accent"
-                  })
+                  }) === 0
                 ) {
                   this.setSelected(temp);
                   return;

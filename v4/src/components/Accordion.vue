@@ -16,6 +16,8 @@
 </template>
 
 <script>
+import validEvent from "@/functions/validEvent";
+
 export default {
   name: "Accordion",
   props: {
@@ -34,14 +36,7 @@ export default {
       this.$emit("change");
     },
     handleKeyDown(event) {
-      if (
-        event?.key &&
-        !event.shiftKey &&
-        !event.ctrlKey &&
-        !event.altKey &&
-        !event.metaKey &&
-        (event.key === "Enter" || event.key === "Space") // if enter or space is pressed
-      ) {
+      if (validEvent(event, ["Enter", "Space"])) {
         event.preventDefault();
         this.handleClick();
       }
