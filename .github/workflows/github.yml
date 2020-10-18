@@ -63,9 +63,10 @@ jobs:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: ${{ secrets.AWS_REGION }}
-      - name: List
-        run: ls
       - name: Remove old dist
-        run: aws s3 mv s3://${{ secrets.AWS_BUCKET }} s3://${{ secrets.AWS_BUCKET }}/backup --recursive
+        run: |
+            ls 
+            aws s3 rm s3://${{ secrets.AWS_BUCKET }}/backup --recursive
+            aws s3 mv s3://${{ secrets.AWS_BUCKET }} s3://${{ secrets.AWS_BUCKET }}/backup --recursive
       - name: Upload new dist
         run: aws s3 cp ${{needs.build.outputs.dist}} s3://${{ secrets.AWS_BUCKET }} --recursive
