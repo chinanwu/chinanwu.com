@@ -88,7 +88,6 @@ jobs:
           aws-region: ${{ secrets.AWS_REGION }}
       - name: Update distribution
         run: |
-          echo ${{needs.build.outputs.indexFilename}}
           aws cloudfront update-distribution --id ${{ secrets.DISTRIBUTION_ID }} \
           --default-root-object ${{needs.build.outputs.indexFilename}}
          
