@@ -44,7 +44,7 @@ jobs:
               cd dist
               FILE_NAME="index_v${GITHUB_RUN_NUMBER}.html"
               mv index.html $FILE_NAME
-              ::set-output name=dist::dist
+              echo "::set-output name=dist::dist"
 
   upload:
     # The type of runner that the job will run on
