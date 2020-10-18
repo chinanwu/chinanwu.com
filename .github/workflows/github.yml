@@ -46,7 +46,7 @@ jobs:
               cd dist
               FILE_NAME="index_v${GITHUB_RUN_NUMBER}.html"
               mv index.html $FILE_NAME
-              echo "::set-output name=dist::dist"
+              #echo "##[set-output name=dist;]$(cd ../dist)"
 
   upload:
     # The type of runner that the job will run on
@@ -63,8 +63,8 @@ jobs:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: ${{ secrets.AWS_REGION }}
-      - name: List dist
-        run: ls ${{needs.build.outputs.dist}}
+      - name: List
+        run: ls
       - name: Remove old dist
         run: aws s3 mv s3://${{ secrets.AWS_BUCKET }} s3://${{ secrets.AWS_BUCKET }}/backup --recursive
       - name: Upload new dist
