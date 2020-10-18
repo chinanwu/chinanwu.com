@@ -63,7 +63,7 @@ jobs:
         uses: actions/download-artifact@v2
         with:
           name: dist
-          path: dist
+          path: v4/dist
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
