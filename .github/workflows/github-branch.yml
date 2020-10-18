@@ -4,9 +4,12 @@ on:
   push:
     branches-ignore: [ main ]
 
+env:
+  CURRENT_VERSION: v4
+
 defaults:
   run:
-    working-directory: v4
+    working-directory: $CURRENT_VERSION
 
 jobs:
   test:
