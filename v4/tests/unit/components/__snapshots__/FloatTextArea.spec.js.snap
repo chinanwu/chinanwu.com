@@ -1,0 +1,81 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FloatTextArea behaviour floats if focused in on 1`] = `
+<div
+  class="FloatTextArea"
+>
+  <label
+    class="FloatTextArea__label"
+    data-float="false"
+    for="floatInput-label"
+    id="floatInputLabel-label"
+  >
+    label
+  </label>
+  <textarea
+    aria-labelledby="floatTextAreaLabel-label"
+    class="FloatTextArea__textarea"
+    id="floatTextArea-label"
+  />
+</div>
+`;
+
+exports[`FloatTextArea behaviour keep floating if focus moves away with input 1`] = `
+<div
+  class="FloatTextArea"
+>
+  <label
+    class="FloatTextArea__label FloatTextArea__label--float"
+    data-float="true"
+    for="floatInput-label"
+    id="floatInputLabel-label"
+  >
+    label
+  </label>
+  <textarea
+    aria-labelledby="floatTextAreaLabel-label"
+    class="FloatTextArea__textarea"
+    id="floatTextArea-label"
+  />
+</div>
+`;
+
+exports[`FloatTextArea behaviour stops floating if focus moves away with no input 1`] = `
+<div
+  class="FloatTextArea"
+>
+  <label
+    class="FloatTextArea__label FloatTextArea__label--float"
+    data-float="true"
+    for="floatInput-label"
+    id="floatInputLabel-label"
+  >
+    label
+  </label>
+  <textarea
+    aria-labelledby="floatTextAreaLabel-label"
+    class="FloatTextArea__textarea"
+    id="floatTextArea-label"
+  />
+</div>
+`;
+
+exports[`FloatTextArea rendering renders 1`] = `
+<div
+  class="FloatTextArea"
+>
+  <label
+    class="FloatTextArea__label"
+    data-float="false"
+    for="floatInput-test"
+    id="floatInputLabel-test"
+  >
+    test
+  </label>
+  <textarea
+    aria-labelledby="floatTextAreaLabel-test"
+    class="FloatTextArea__textarea"
+    id="floatTextArea-test"
+  />
+</div>
+`;

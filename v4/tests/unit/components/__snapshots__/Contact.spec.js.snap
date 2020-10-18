@@ -1,0 +1,187 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Contact behaviour sets input values 1`] = `
+<section
+  aria-labelledby="contactHeader"
+  id="contact"
+>
+  <header>
+    <h2
+      class="headerLabel"
+      id="contactHeader"
+    >
+      Contact
+    </h2>
+  </header>
+  <div
+    class="Contact__formContainer"
+  >
+    <form
+      class="Contact__form"
+      name="email"
+    >
+      <div
+        class="Contact__formInputs"
+      >
+        <float-input-stub
+          class="Contact__formInput"
+        />
+        <float-input-stub />
+      </div>
+      <float-text-area-stub />
+      <div
+        class="Contact__submit"
+      >
+        <input
+          class="Contact__submitBtn"
+          id="contactSubmit"
+          type="submit"
+          value="Submit"
+        />
+      </div>
+    </form>
+  </div>
+  <div
+    class="Contact__additional"
+  >
+    <h3
+      class="headerLabel"
+    >
+      Or, find me on:
+    </h3>
+    <ul
+      class="Contact__additionalLinks --uppercase"
+    >
+      <li>
+        <a
+          class="Contact__additionalLink"
+          href="https://github.com/chinanwu"
+          title="Salmon (Chin-An) Wu's github page"
+        >
+          <img
+            alt="Github logo"
+            class="Contact__additionalLinkIcon"
+            src=""
+          />
+          <span
+            class="Contact__additionalLinkLabel"
+          >
+            Github
+          </span>
+        </a>
+      </li>
+      <li>
+        <a
+          class="Contact__additionalLink"
+          href="https://linkedin.com/in/chinanwu"
+          title="Salmon (Chin-An) Wu's LinkedIn page"
+        >
+          <img
+            alt="LinkedIn logo"
+            class="Contact__additionalLinkIcon"
+            src=""
+          />
+          <span
+            class="Contact__additionalLinkLabel"
+          >
+            LinkedIn
+          </span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</section>
+`;
+
+exports[`Contact rendering renders 1`] = `
+<section
+  aria-labelledby="contactHeader"
+  id="contact"
+>
+  <header>
+    <h2
+      class="headerLabel"
+      id="contactHeader"
+    >
+      Contact
+    </h2>
+  </header>
+  <div
+    class="Contact__formContainer"
+  >
+    <form
+      class="Contact__form"
+      name="email"
+    >
+      <div
+        class="Contact__formInputs"
+      >
+        <float-input-stub
+          class="Contact__formInput"
+        />
+        <float-input-stub />
+      </div>
+      <float-text-area-stub />
+      <div
+        class="Contact__submit"
+      >
+        <input
+          class="Contact__submitBtn"
+          id="contactSubmit"
+          type="submit"
+          value="Submit"
+        />
+      </div>
+    </form>
+  </div>
+  <div
+    class="Contact__additional"
+  >
+    <h3
+      class="headerLabel"
+    >
+      Or, find me on:
+    </h3>
+    <ul
+      class="Contact__additionalLinks --uppercase"
+    >
+      <li>
+        <a
+          class="Contact__additionalLink"
+          href="https://github.com/chinanwu"
+          title="Salmon (Chin-An) Wu's github page"
+        >
+          <img
+            alt="Github logo"
+            class="Contact__additionalLinkIcon"
+            src=""
+          />
+          <span
+            class="Contact__additionalLinkLabel"
+          >
+            Github
+          </span>
+        </a>
+      </li>
+      <li>
+        <a
+          class="Contact__additionalLink"
+          href="https://linkedin.com/in/chinanwu"
+          title="Salmon (Chin-An) Wu's LinkedIn page"
+        >
+          <img
+            alt="LinkedIn logo"
+            class="Contact__additionalLinkIcon"
+            src=""
+          />
+          <span
+            class="Contact__additionalLinkLabel"
+          >
+            LinkedIn
+          </span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</section>
+`;

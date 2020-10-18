@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TableOfContents rendering renders 1`] = `
+<nav
+  aria-labelledby="toc"
+  class="TableOfContents --uppercase"
+>
+  <h2
+    class="headerLabel"
+    id="toc"
+  >
+    Table of Contents
+  </h2>
+  <ol
+    class="TableOfContents__list"
+    id="tableOfContents"
+    tabindex="0"
+  >
+    
+    <li>
+      <strong>
+        <a
+          class="--uppercase"
+          href="#test"
+          title="Fake link"
+        >
+          Test
+        </a>
+      </strong>
+    </li>
+    
+  </ol>
+</nav>
+`;

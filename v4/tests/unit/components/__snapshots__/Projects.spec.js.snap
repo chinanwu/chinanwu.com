@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Projects renders 1`] = `
+<section
+  aria-labelledby="projectsHeader"
+  class="Projects"
+  id="projects"
+>
+  <header>
+    <h2
+      class="headerLabel"
+      id="projectsHeader"
+    >
+      Projects
+    </h2>
+  </header>
+  <arrow-nav-menu-stub />
+  <project-stub />
+  <div
+    class="Projects__arrowSelectorContainer"
+  >
+    <arrow-selector-stub />
+  </div>
+</section>
+`;

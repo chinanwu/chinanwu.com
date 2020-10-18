@@ -10,14 +10,3 @@ exports[`Separator renders 1`] = `
   />
 </div>
 `;
-
-exports[`Separator.vue renders 1`] = `
-<div
-  class="Separator__container"
-  role="presentation"
->
-  <div
-    class="Separator"
-  />
-</div>
-`;

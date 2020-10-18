@@ -1,0 +1,126 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FloatInput behaviour floats if focused in on 1`] = `
+<div
+  class="FloatInput"
+>
+  <label
+    class="FloatInput__label"
+    data-float="false"
+    for="floatInput-label"
+    id="floatInputLabel-label"
+  >
+    label
+  </label>
+  <!--v-if-->
+  <input
+    accesskey="l"
+    aria-labelledby="floatInputLabel-label"
+    class="FloatInput__input"
+    id="floatInput-label"
+    name="Test"
+    type="text"
+  />
+</div>
+`;
+
+exports[`FloatInput behaviour keep floating if focus moves away with input 1`] = `
+<div
+  class="FloatInput"
+>
+  <label
+    class="FloatInput__label FloatInput__label--float"
+    data-float="true"
+    for="floatInput-label"
+    id="floatInputLabel-label"
+  >
+    label
+  </label>
+  <!--v-if-->
+  <input
+    accesskey="l"
+    aria-labelledby="floatInputLabel-label"
+    class="FloatInput__input"
+    id="floatInput-label"
+    name="Test"
+    type="text"
+  />
+</div>
+`;
+
+exports[`FloatInput behaviour stops floating if focus moves away with no input 1`] = `
+<div
+  class="FloatInput"
+>
+  <label
+    class="FloatInput__label FloatInput__label--float"
+    data-float="true"
+    for="floatInput-label"
+    id="floatInputLabel-label"
+  >
+    label
+  </label>
+  <!--v-if-->
+  <input
+    accesskey="l"
+    aria-labelledby="floatInputLabel-label"
+    class="FloatInput__input"
+    id="floatInput-label"
+    name="Test"
+    type="text"
+  />
+</div>
+`;
+
+exports[`FloatInput rendering renders 1`] = `
+<div
+  class="FloatInput"
+>
+  <label
+    class="FloatInput__label"
+    data-float="false"
+    for="floatInput-label"
+    id="floatInputLabel-label"
+  >
+    label
+  </label>
+  <!--v-if-->
+  <input
+    accesskey="l"
+    aria-labelledby="floatInputLabel-label"
+    class="FloatInput__input"
+    id="floatInput-label"
+    name="Test"
+    type="text"
+  />
+</div>
+`;
+
+exports[`FloatInput rendering renders required field 1`] = `
+<div
+  class="FloatInput"
+>
+  <label
+    class="FloatInput__label"
+    data-float="false"
+    for="floatInput-label"
+    id="floatInputLabel-label"
+  >
+    label
+  </label>
+  <span
+    class="FloatInput__required"
+  >
+    Required Field
+  </span>
+  <input
+    accesskey="l"
+    aria-labelledby="floatInputLabel-label"
+    class="FloatInput__input"
+    id="floatInput-label"
+    name="Test"
+    required=""
+    type="text"
+  />
+</div>
+`;

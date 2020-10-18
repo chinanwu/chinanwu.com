@@ -1,0 +1,115 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Work rendering renders 1`] = `
+<section
+  aria-labelledby="workHeader"
+  id="work"
+>
+  <header>
+    <h2
+      class="headerLabel"
+      id="workHeader"
+    >
+      Work
+    </h2>
+  </header>
+  <div
+    class="Work__container"
+  >
+    <ul
+      class="Work__jobs"
+    >
+      
+      <li
+        class="Work__job"
+      >
+        <h3
+          class="Work__jobTitle --uppercase"
+        >
+          Software Engineer
+        </h3>
+        <p
+          class="Work__jobCompany"
+        >
+          BlueCat Networks
+        </p>
+        <p
+          class="Work__jobTime"
+        >
+          SEP 2020 - Present
+        </p>
+        <p
+          class="Work__jobStack --uppercase"
+        >
+          Java, AWS
+        </p>
+      </li>
+      <li
+        class="Work__job"
+      >
+        <h3
+          class="Work__jobTitle --uppercase"
+        >
+          Software Developer Co-op
+        </h3>
+        <p
+          class="Work__jobCompany"
+        >
+          BlueCat Networks
+        </p>
+        <p
+          class="Work__jobTime"
+        >
+          JAN 2019 - DEC 2019
+        </p>
+        <p
+          class="Work__jobStack --uppercase"
+        >
+          Java, React, Redux, AWS, Docker
+        </p>
+      </li>
+      <li
+        class="Work__job"
+      >
+        <h3
+          class="Work__jobTitle --uppercase"
+        >
+          Backend Developer Intern
+        </h3>
+        <p
+          class="Work__jobCompany"
+        >
+          Chefs Plate
+        </p>
+        <p
+          class="Work__jobTime"
+        >
+          JAN 2018 - SEP 2018
+        </p>
+        <p
+          class="Work__jobStack --uppercase"
+        >
+          PHP, MongoDB, Laravel
+        </p>
+      </li>
+      
+    </ul>
+  </div>
+  <div
+    class="Work__container"
+  >
+    <label
+      class="Work__downloadLabel"
+    >
+      Resume:
+    </label>
+    <button
+      aria-label="Download Salmon's resume"
+      class="Work__download"
+      id="workDownload"
+    >
+       Download 
+    </button>
+  </div>
+</section>
+`;

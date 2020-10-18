@@ -1,0 +1,82 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MainScreen renders 1`] = `
+<section
+  aria-labelledby="mainHeader"
+>
+  <header
+    class="Main__header --uppercase"
+  >
+    <h1
+      class="Main__headerName"
+      id="mainHeader"
+    >
+      <span
+        class="Main__headerName--highlight"
+      >
+        Salmon
+      </span>
+    </h1>
+    <ul
+      class="Main__headerList"
+    >
+      <li
+        class="Main__headerListItem"
+      >
+        <span
+          class="Main__headerPronouns"
+        >
+          They/Them
+        </span>
+      </li>
+      <li
+        class="Main__headerListItem"
+      >
+        <span
+          class="Main__headerSoftwareDev"
+        >
+          Software Dev
+        </span>
+      </li>
+      <li
+        class="Main__headerListItem"
+      >
+        <span
+          class="Main__headerToronto"
+        >
+          Toronto
+        </span>
+      </li>
+    </ul>
+  </header>
+  <separator-stub />
+  <table-of-contents-stub />
+  <separator-stub />
+  <projects-stub />
+  <separator-stub />
+  <work-stub />
+  <separator-stub />
+  <contact-stub />
+  <separator-stub />
+  <footer
+    class="Main__footer"
+  >
+    <p
+      class="Main__footerWords"
+    >
+       Made by: 
+      <strong>
+        Salmon (Chin-An) Wu
+      </strong>
+    </p>
+    <p
+      class="Main__footerWords"
+    >
+      With: 
+      <strong>
+        Vue, Less, JS
+      </strong>
+    </p>
+  </footer>
+</section>
+`;

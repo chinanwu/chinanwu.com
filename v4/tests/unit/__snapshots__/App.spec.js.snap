@@ -1,0 +1,93 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App behaviour removes flip prompt on card click 1`] = `
+<div
+  class="App__shell"
+>
+  <div
+    class="App__start"
+  >
+    <card-stub />
+    <div
+      class="App__readMore"
+    >
+      <div
+        class="App__bracket App__bracket--left"
+      />
+      <button
+        class="App__readMoreBtn --uppercase"
+        id="readMore"
+      >
+         Read More 
+      </button>
+      <div
+        class="App__bracket App__bracket--right"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`App behaviour switches to Main when click read more 1`] = `
+<div
+  class="App__shell"
+>
+  <div
+    class="App__start"
+  >
+    <card-stub />
+    <div
+      class="App__readMore"
+    >
+      <div
+        class="App__bracket App__bracket--left"
+      />
+      <button
+        class="App__readMoreBtn --uppercase"
+        id="readMore"
+      >
+         Read More 
+      </button>
+      <div
+        class="App__bracket App__bracket--right"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`App rendering renders 1`] = `
+<div
+  class="App__shell"
+>
+  <div
+    class="App__start"
+  >
+    <card-stub />
+    <div
+      class="App__readMore"
+    >
+      <div
+        class="App__bracket App__bracket--left"
+      />
+      <button
+        class="App__readMoreBtn --uppercase"
+        id="readMore"
+      >
+         Read More 
+      </button>
+      <div
+        class="App__bracket App__bracket--right"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`App rendering renders main screen 1`] = `
+<div
+  class="App__shell"
+>
+  <main-screen-stub />
+</div>
+`;

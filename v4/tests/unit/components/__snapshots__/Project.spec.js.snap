@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Project rendering renders 1`] = `
+<section
+  aria-labelledby="projectHeader"
+  class="Project"
+>
+  <brackets-stub />
+</section>
+`;
+
+exports[`Project rendering renders with a TBA link 1`] = `
+<section
+  aria-labelledby="projectHeader"
+  class="Project"
+>
+  <brackets-stub />
+</section>
+`;
+
+exports[`Project rendering renders with showcase 1`] = `
+<section
+  aria-labelledby="projectHeader"
+  class="Project"
+>
+  <brackets-stub />
+</section>
+`;
