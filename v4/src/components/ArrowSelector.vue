@@ -5,25 +5,30 @@
         id="arrowSelectorLeft"
         class="ArrowSelector__btn"
         @click="handleLeftArrow"
-        @keydown="handleLeftArrowKeyDown"
+        aria-label="Select previous project"
       >
         &lt;
       </button>
-      <span>{{ current }} / {{ total }}</span>
+      <span aria-labelledby="arrowSelectorLabel"
+        >{{ current }} / {{ total }}</span
+      >
       <button
         id="arrowSelectorRight"
         class="ArrowSelector__btn"
         @click="handleRightArrow"
-        @keydown="handleRightArrowKeyDown"
+        aria-label="Select next project"
       >
         &gt;
       </button>
     </div>
-    <div class="ArrowSelector__label">Current</div>
+    <div id="arrowSelectorLabel" class="ArrowSelector__label">Current</div>
   </div>
 </template>
 
 <script>
+// Note to Salmon: Don't need to implement @keydown because <button> does it automatically!
+// Huzzah to built-in functionalities!
+
 export default {
   name: "ArrowSelector",
   props: {
@@ -57,36 +62,6 @@ export default {
     },
     handleRightArrow() {
       this.setCurrent(this.current + 1 > this.total ? 1 : this.current + 1);
-    },
-    handleLeftArrowKeyDown(event) {
-      if (
-        event &&
-        !event.shiftKey &&
-        !event.ctrlKey &&
-        !event.altKey &&
-        !event.metaKey &&
-        event.key
-      ) {
-        if (event.key === "Enter" || event.key === "Space") {
-          event.preventDefault();
-          this.handleLeftArrow();
-        }
-      }
-    },
-    handleRightArrowKeyDown(event) {
-      if (
-        event &&
-        !event.shiftKey &&
-        !event.ctrlKey &&
-        !event.altKey &&
-        !event.metaKey &&
-        event.key
-      ) {
-        if (event.key === "Enter" || event.key === "Space") {
-          event.preventDefault();
-          this.handleRightArrow();
-        }
-      }
     }
   },
   emits: ["change"]

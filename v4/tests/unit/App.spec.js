@@ -21,8 +21,9 @@ describe("App", () => {
     it("removes flip prompt on card click", () => {
       const wrapper = shallowMount(App);
       expect(wrapper.element).toMatchSnapshot();
-      wrapper.findComponent(Card).vm.$emit("click");
-      expect(wrapper.vm.showFlip).toBeFalsy();
+      wrapper.findComponent(Card).vm.$emit("flip");
+      expect(wrapper.vm.showFlipPrompt).toBeFalsy();
+      expect(wrapper.vm.flipped).toBeTruthy();
     });
 
     it("switches to Main when click read more", () => {

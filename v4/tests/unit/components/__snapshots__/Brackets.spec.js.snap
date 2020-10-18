@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Brackets renders 1`] = `
+<div
+  class="Brackets"
+>
+  <div
+    class="Bracket Bracket__upper"
+    role="presentation"
+  />
+  
+  
+  <div
+    class="Bracket Bracket__lower"
+    role="presentation"
+  />
+</div>
+`;
+
+exports[`Brackets renders with content 1`] = `
+<div
+  class="Brackets"
+>
+  <div
+    class="Bracket Bracket__upper"
+    role="presentation"
+  />
+  
+  
+  <div
+    id="test"
+  >
+    Here
+  </div>
+  
+  
+  <div
+    class="Bracket Bracket__lower"
+    role="presentation"
+  />
+</div>
+`;

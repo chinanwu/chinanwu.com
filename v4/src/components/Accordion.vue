@@ -4,10 +4,10 @@
       id="accordionBtn"
       class="Accordion__btn"
       @click="handleClick"
-      @keydown="handleKeyDown"
+      aria-live="polite"
     >
-      <span>{{ label }}</span>
-      <span>{{ expand ? "-" : "+" }}</span>
+      <span>{{ expand ? labelExpanded : labelMinimized }}</span>
+      <span role="presentation">{{ expand ? "-" : "+" }}</span>
     </button>
     <transition name="expand" mode="out-in">
       <slot v-if="expand" name="content"></slot>
@@ -16,12 +16,16 @@
 </template>
 
 <script>
-import validEvent from "@/functions/validEvent";
+// TODO: https://www.w3.org/TR/wai-aria-practices-1.1/#accordion
 
 export default {
   name: "Accordion",
   props: {
-    label: {
+    labelExpanded: {
+      type: String,
+      default: null
+    },
+    labelMinimized: {
       type: String,
       default: null
     },
@@ -34,12 +38,6 @@ export default {
   methods: {
     handleClick() {
       this.$emit("change");
-    },
-    handleKeyDown(event) {
-      if (validEvent(event, ["Enter", "Space"])) {
-        event.preventDefault();
-        this.handleClick();
-      }
     }
   }
 };

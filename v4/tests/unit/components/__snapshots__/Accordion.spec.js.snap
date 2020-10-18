@@ -1,0 +1,93 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Accordion behaviour emits change when clicked 1`] = `
+<div>
+  <button
+    aria-live="polite"
+    class="Accordion__btn"
+    id="accordionBtn"
+  >
+    <span />
+    <span
+      role="presentation"
+    >
+      +
+    </span>
+  </button>
+  <transition-stub>
+    <!--v-if-->
+  </transition-stub>
+</div>
+`;
+
+exports[`Accordion rendering renders 1`] = `
+<div>
+  <button
+    aria-live="polite"
+    class="Accordion__btn"
+    id="accordionBtn"
+  >
+    <span />
+    <span
+      role="presentation"
+    >
+      +
+    </span>
+  </button>
+  <transition-stub>
+    <!--v-if-->
+  </transition-stub>
+</div>
+`;
+
+exports[`Accordion rendering renders expanded 1`] = `
+<div>
+  <button
+    aria-live="polite"
+    class="Accordion__btn"
+    id="accordionBtn"
+  >
+    <span>
+      Expanded
+    </span>
+    <span
+      role="presentation"
+    >
+      -
+    </span>
+  </button>
+  <transition-stub>
+    
+    
+    <div
+      id="test"
+    >
+      Here
+    </div>
+    
+    
+  </transition-stub>
+</div>
+`;
+
+exports[`Accordion rendering renders minimized 1`] = `
+<div>
+  <button
+    aria-live="polite"
+    class="Accordion__btn"
+    id="accordionBtn"
+  >
+    <span>
+      Minimized
+    </span>
+    <span
+      role="presentation"
+    >
+      +
+    </span>
+  </button>
+  <transition-stub>
+    <!--v-if-->
+  </transition-stub>
+</div>
+`;

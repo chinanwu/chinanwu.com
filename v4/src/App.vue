@@ -1,29 +1,31 @@
 <template>
-  <div class="App__shell">
+  <div class="App__shell" aria-live="polite">
     <transition name="fade" mode="out-in">
       <div v-if="!readMore" class="App__start">
-        <Card id="card" @click="showFlip = false">
+        <Card id="card" :flipped="flipped" @flip="handleFlip" :tabIndex="1">
           <template #front>
-            <div class="App__cardFront">
-              <div class="App__cardPrompt" v-if="showFlip">
-                Click Me!
-              </div>
+            <div class="App__cardFront" :aria-hidden="flipped">
               <div class="App__cardFrontIcon">
                 <img
                   :src="require('@/assets/images/self.png')"
                   alt="Cartoon drawing of Salmon"
+                  role="presentation"
                 />
               </div>
               <header class="--uppercase">
                 <h1 class="App__cardName App__cardFirstName">
-                  Salmon<span class="App__cardFirstNameSub">(Chin-An)</span>
+                  <span class="App__cardFirstName">Salmon</span>
+                  <span class="App__cardFirstNameSub">(Chin-An)</span>
+                  Wu
                 </h1>
-                <h1 class="App__cardName">Wu</h1>
               </header>
+              <span class="App__cardPrompt" v-if="showFlipPrompt">
+                Click Me!
+              </span>
             </div>
           </template>
           <template #back>
-            <div class="App__back --uppercase">
+            <div class="App__back --uppercase" :aria-hidden="!flipped">
               <ul class="App__backList">
                 <li>They/Them</li>
                 <li><span class="App__backList--long">Software Dev</span></li>
@@ -35,12 +37,15 @@
                   <a
                     class="App__backLink"
                     href="https://github.com/chinanwu"
-                    title="Salmon (Chin-An) Wu's github page"
+                    title="Salmon's github page"
+                    aria-label="Salmon's git-hub page"
+                    tabindex="2"
                   >
                     <img
                       class="App__backIcon"
                       :src="require('@/assets/images/github.png')"
-                      alt="Github logo"
+                      alt="Git-hub logo"
+                      role="presentation"
                     />
                     <span class="App__backLabel">Github</span>
                   </a>
@@ -49,12 +54,15 @@
                   <a
                     class="App__backLink"
                     href="https://linkedin.com/in/chinanwu"
-                    title="Salmon (Chin-An) Wu's LinkedIn page"
+                    title="Salmon's Linked-In page"
+                    aria-label="Salmon's Linked-In page"
+                    tabindex="3"
                   >
                     <img
                       class="App__backIcon"
                       :src="require('@/assets/images/linkedin.png')"
-                      alt="LinkedIn logo"
+                      alt="Linked-In logo"
+                      role="presentation"
                     />
                     <span class="App__backLabel">LinkedIn</span>
                   </a>
@@ -63,11 +71,15 @@
                   <a
                     class="App__backLink"
                     href="mailto:cawudev@gmail.com"
-                    title="Salmon (Chin-An) Wu's email address"
+                    title="Email Salmon"
+                    aria-label="Send Salmon an email"
+                    tabindex="4"
                   >
                     <img
+                      class="App__backIcon"
                       :src="require('@/assets/images/email.png')"
                       alt="Email icon"
+                      role="presentation"
                     />
                     <span class="App__backLabel">Email</span>
                   </a>
@@ -76,13 +88,22 @@
             </div>
           </template>
         </Card>
-        <div class="App__readMore" @click="handleClick">
-          <div class="App__bracket App__bracket--left"></div>
-          <button id="readMore" class="App__readMoreBtn --uppercase">
-            Read More
-          </button>
-          <div class="App__bracket App__bracket--right"></div>
-        </div>
+        <button
+          id="readMore"
+          class="App__readMore --uppercase"
+          @click="handleClick"
+          :tabIndex="5"
+        >
+          <span
+            class="App__bracket App__bracket--left"
+            role="presentation"
+          ></span>
+          Read More
+          <span
+            class="App__bracket App__bracket--right"
+            role="presentation"
+          ></span>
+        </button>
       </div>
       <MainScreen v-else />
     </transition>
@@ -101,13 +122,18 @@ export default {
       readMore: sessionStorage.getItem("readMore")
         ? JSON.parse(sessionStorage.getItem("readMore"))
         : false,
-      showFlip: true
+      showFlipPrompt: true,
+      flipped: false
     };
   },
   methods: {
     handleClick() {
       this.readMore = true;
       sessionStorage.setItem("readMore", "true");
+    },
+    handleFlip() {
+      this.showFlipPrompt = false;
+      this.flipped = !this.flipped;
     }
   }
 };
@@ -287,12 +313,24 @@ button {
 .App__cardFirstNameSub {
   font-size: 1.8rem;
   color: @grey-02;
+  margin-bottom: 1rem;
 }
 
 .App__readMore {
   margin-top: 4rem;
   display: flex;
+  align-items: stretch;
   cursor: pointer;
+  font-size: 3.6rem;
+  color: @grey-01;
+  transition: all 0.2s;
+
+  &:hover,
+  &:focus {
+    font-size: 4.4rem;
+    box-shadow: rgba(255, 255, 255, 0.5) 0 -12rem 0 inset;
+    cursor: pointer;
+  }
 }
 
 @bracket-width: 5px;
@@ -309,27 +347,6 @@ button {
 
 .App__bracket--right {
   border-right: @bracket-width solid @grey-05;
-}
-
-.App__readMoreBtn {
-  font-size: 3.6rem;
-  color: @grey-01;
-  margin: 1rem;
-  cursor: pointer;
-}
-
-.App__readMore:hover > .App__readMoreBtn,
-.App__readMore > .App__readMoreBtn:focus {
-  transition: all 0.2s;
-  font-size: 4.4rem;
-  box-shadow: rgba(255, 255, 255, 0.5) 0 -12rem 0 inset;
-  cursor: pointer;
-}
-
-@media (prefers-reduced-motion) {
-  .App__readMore:hover > .App__readMoreBtn {
-    transition: none;
-  }
 }
 
 .App__back {

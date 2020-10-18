@@ -42,11 +42,13 @@
             class="Contact__additionalLink"
             href="https://github.com/chinanwu"
             title="Salmon (Chin-An) Wu's github page"
+            aria-label="Salmon (Chin-An) Wu's git-hub page"
           >
             <img
               class="Contact__additionalLinkIcon"
               :src="require('@/assets/images/github.png')"
-              alt="Github logo"
+              alt="Git-hub logo"
+              role="presentation"
             />
             <span class="Contact__additionalLinkLabel">Github</span>
           </a>
@@ -55,12 +57,14 @@
           <a
             class="Contact__additionalLink"
             href="https://linkedin.com/in/chinanwu"
-            title="Salmon (Chin-An) Wu's LinkedIn page"
+            title="Salmon (Chin-An) Wu's Linked-In page"
+            aria-label="Salmon (Chin-An) Wu's Linked-In page"
           >
             <img
               class="Contact__additionalLinkIcon"
               :src="require('@/assets/images/linkedin.png')"
-              alt="LinkedIn logo"
+              alt="Linked-In logo"
+              role="presentation"
             />
             <span class="Contact__additionalLinkLabel">LinkedIn</span>
           </a>

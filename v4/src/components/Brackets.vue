@@ -8,11 +8,7 @@
 
 <script>
 export default {
-  name: "Brackets",
-  props: {
-    contentId: String,
-    content: String
-  }
+  name: "Brackets"
 };
 </script>
 

@@ -1,11 +1,176 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Project behaviour expands accordion with features 1`] = `
+<section
+  aria-labelledby="projectHeader"
+  class="Project"
+>
+  <div
+    class="Brackets"
+  >
+    <div
+      class="Bracket Bracket__upper"
+      role="presentation"
+    />
+    
+    <section
+      class="Project__content"
+    >
+      <header>
+        <h3
+          class="headerLabel"
+          id="projectHeader"
+        >
+          Test
+        </h3>
+      </header>
+      <div
+        class="Project__details"
+      >
+        <div
+          class="Project__links"
+        >
+          <a
+            aria-label="Test Github page"
+            class="Project__link --uppercase"
+            href="Github"
+            title="Test Github page"
+          >
+             Github 
+          </a>
+          <a
+            aria-disabled="false"
+            aria-label="Test live project page"
+            class="Project__link --uppercase"
+            href="Link"
+            title="Test live project page"
+          >
+             Link 
+          </a>
+        </div>
+        <p
+          class="Project__description"
+        >
+          test description
+        </p>
+        <section
+          aria-labelledby="projectTechnologies"
+        >
+          <h4
+            class="Project__sectionHeader"
+            id="projectTechnologies"
+          >
+             Technologies 
+          </h4>
+          <!--v-if-->
+          <!--v-if-->
+        </section>
+        <div
+          class="Project__accordion"
+        >
+          <button
+            aria-live="polite"
+            class="Accordion__btn"
+            id="accordionBtn"
+          >
+            <span>
+              The Spicy Stuff
+            </span>
+            <span
+              role="presentation"
+            >
+              +
+            </span>
+          </button>
+          <transition-stub>
+            <!--v-if-->
+          </transition-stub>
+        </div>
+      </div>
+    </section>
+    
+    <div
+      class="Bracket Bracket__lower"
+      role="presentation"
+    />
+  </div>
+</section>
+`;
+
 exports[`Project rendering renders 1`] = `
 <section
   aria-labelledby="projectHeader"
   class="Project"
 >
-  <brackets-stub />
+  <div
+    class="Brackets"
+  >
+    <div
+      class="Bracket Bracket__upper"
+      role="presentation"
+    />
+    
+    <section
+      class="Project__content"
+    >
+      <header>
+        <h3
+          class="headerLabel"
+          id="projectHeader"
+        >
+          Test
+        </h3>
+      </header>
+      <div
+        class="Project__details"
+      >
+        <div
+          class="Project__links"
+        >
+          <a
+            aria-label="Test Github page"
+            class="Project__link --uppercase"
+            href="Github"
+            title="Test Github page"
+          >
+             Github 
+          </a>
+          <a
+            aria-disabled="false"
+            aria-label="Test live project page"
+            class="Project__link --uppercase"
+            href="Link"
+            title="Test live project page"
+          >
+             Link 
+          </a>
+        </div>
+        <p
+          class="Project__description"
+        >
+          test description
+        </p>
+        <section
+          aria-labelledby="projectTechnologies"
+        >
+          <h4
+            class="Project__sectionHeader"
+            id="projectTechnologies"
+          >
+             Technologies 
+          </h4>
+          <!--v-if-->
+          <!--v-if-->
+        </section>
+        <!--v-if-->
+      </div>
+    </section>
+    
+    <div
+      class="Bracket Bracket__lower"
+      role="presentation"
+    />
+  </div>
 </section>
 `;
 
@@ -14,7 +179,74 @@ exports[`Project rendering renders with a TBA link 1`] = `
   aria-labelledby="projectHeader"
   class="Project"
 >
-  <brackets-stub />
+  <div
+    class="Brackets"
+  >
+    <div
+      class="Bracket Bracket__upper"
+      role="presentation"
+    />
+    
+    <section
+      class="Project__content"
+    >
+      <header>
+        <h3
+          class="headerLabel"
+          id="projectHeader"
+        >
+          Test
+        </h3>
+      </header>
+      <div
+        class="Project__details"
+      >
+        <div
+          class="Project__links"
+        >
+          <a
+            aria-label="Test Github page"
+            class="Project__link --uppercase"
+            href="Github"
+            title="Test Github page"
+          >
+             Github 
+          </a>
+          <a
+            aria-disabled="true"
+            aria-label="Test live project page - Coming soon"
+            class="Project__linkTba Project__link --uppercase"
+            title="Test live project page - Coming soon"
+          >
+             Link 
+          </a>
+        </div>
+        <p
+          class="Project__description"
+        >
+          test description
+        </p>
+        <section
+          aria-labelledby="projectTechnologies"
+        >
+          <h4
+            class="Project__sectionHeader"
+            id="projectTechnologies"
+          >
+             Technologies 
+          </h4>
+          <!--v-if-->
+          <!--v-if-->
+        </section>
+        <!--v-if-->
+      </div>
+    </section>
+    
+    <div
+      class="Bracket Bracket__lower"
+      role="presentation"
+    />
+  </div>
 </section>
 `;
 
@@ -23,6 +255,171 @@ exports[`Project rendering renders with showcase 1`] = `
   aria-labelledby="projectHeader"
   class="Project"
 >
-  <brackets-stub />
+  <div
+    class="Brackets"
+  >
+    <div
+      class="Bracket Bracket__upper"
+      role="presentation"
+    />
+    
+    <div>
+      <section
+        aria-labelledby="showcaseHeader"
+      >
+        <header>
+          <h3
+            class="headerLabel"
+            id="showcaseHeader"
+          >
+             Github Showcase 
+          </h3>
+        </header>
+        <div
+          class="Project__showcaseProjects"
+        >
+          
+          <section
+            aria-labelledby="showcaseHeader-0"
+            class="Project__showcase"
+          >
+            <header>
+              <h4
+                class="Project__header --uppercase"
+                id="showcaseHeader-0"
+              >
+                Affirmer
+              </h4>
+            </header>
+            <p
+              class="Project__descriptionShowcase"
+            >
+              A site to made to help users with daily afirmations.
+            </p>
+            <p
+              class="Project__descriptionShowcase"
+            >
+               Made with: 
+              <strong>
+                Vue
+              </strong>
+            </p>
+            <div
+              class="Project__links"
+            >
+              <a
+                class="Project__link --uppercase"
+                href="https://github.com/chinanwu/affirmer"
+                title="Affirmer Github page"
+              >
+                 Github 
+              </a>
+              <a
+                class="Project__link --uppercase"
+                href="https://chinanwu.github.io/affirmer"
+                title="Affirmer live project page"
+              >
+                 Link 
+              </a>
+            </div>
+          </section>
+          <section
+            aria-labelledby="showcaseHeader-1"
+            class="Project__showcase"
+          >
+            <header>
+              <h4
+                class="Project__header --uppercase"
+                id="showcaseHeader-1"
+              >
+                Magnet-Poetry
+              </h4>
+            </header>
+            <p
+              class="Project__descriptionShowcase"
+            >
+              A fake fridge to make real magnetic poetry with!
+            </p>
+            <p
+              class="Project__descriptionShowcase"
+            >
+               Made with: 
+              <strong>
+                Vue
+              </strong>
+            </p>
+            <div
+              class="Project__links"
+            >
+              <a
+                class="Project__link --uppercase"
+                href="https://github.com/chinanwu/magnet-poetry"
+                title="Magnet-Poetry Github page"
+              >
+                 Github 
+              </a>
+              <a
+                class="Project__link --uppercase"
+                href="https://chinanwu.github.io/magnet-poetry"
+                title="Magnet-Poetry live project page"
+              >
+                 Link 
+              </a>
+            </div>
+          </section>
+          <section
+            aria-labelledby="showcaseHeader-2"
+            class="Project__showcase"
+          >
+            <header>
+              <h4
+                class="Project__header --uppercase"
+                id="showcaseHeader-2"
+              >
+                Solver
+              </h4>
+            </header>
+            <p
+              class="Project__descriptionShowcase"
+            >
+              A small go package that finds the optimal solution to Delta problems!
+            </p>
+            <p
+              class="Project__descriptionShowcase"
+            >
+               Made with: 
+              <strong>
+                Golang
+              </strong>
+            </p>
+            <div
+              class="Project__links"
+            >
+              <a
+                class="Project__link --uppercase"
+                href="https://github.com/chinanwu/solver"
+                title="Solver Github page"
+              >
+                 Github 
+              </a>
+              <a
+                class="Project__link --uppercase"
+                href="https://chinanwu.github.io/solver"
+                title="Solver live project page"
+              >
+                 Link 
+              </a>
+            </div>
+          </section>
+          
+        </div>
+      </section>
+    </div>
+    
+    <div
+      class="Bracket Bracket__lower"
+      role="presentation"
+    />
+  </div>
 </section>
 `;

@@ -2,21 +2,24 @@
   <div
     :id="id"
     class="Card"
-    :class="{ 'Card--flip': isFlipped }"
-    tabindex="0"
+    :class="{ 'Card--flip': flipped }"
+    :tabindex="tabIndex"
+    aria-live="polite"
     @click="handleClick"
     @keydown="handleKeyDown"
   >
-    <div class="Card__front">
+    <div class="Card__front" :class="{ 'Card--hidden': flipped }">
       <slot name="front"></slot>
     </div>
-    <div class="Card__back">
+    <div class="Card__back" :class="{ 'Card--hidden': !flipped }">
       <slot name="back"></slot>
     </div>
   </div>
 </template>
 
 <script>
+import validEvent from "@/functions/validEvent";
+
 export default {
   name: "Card",
   props: {
@@ -27,28 +30,19 @@ export default {
     flipped: {
       type: Boolean,
       default: false
+    },
+    tabIndex: {
+      type: Number,
+      default: 0
     }
   },
-  data() {
-    return {
-      isFlipped: this.flipped
-    };
-  },
-  emits: ["click"],
+  emits: ["flip"],
   methods: {
     handleClick() {
-      this.isFlipped = !this.isFlipped;
-      this.$emit("click");
+      this.$emit("flip");
     },
     handleKeyDown(event) {
-      if (
-        event?.keyCode && // Super cool thing I learned literally hours ago
-        !event.shiftKey &&
-        !event.ctrlKey &&
-        !event.altKey &&
-        !event.metaKey &&
-        (event.keyCode === 13 || event.keyCode === 32) // if enter or space is pressed
-      ) {
+      if (validEvent(event, ["Enter", " "])) {
         event.preventDefault();
         this.handleClick();
       }
@@ -96,6 +90,10 @@ export default {
   height: 100%;
   background-color: white;
   justify-content: center;
+}
+
+.Card--hidden {
+  display: none;
 }
 
 .Card__back {

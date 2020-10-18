@@ -10,22 +10,33 @@
           </header>
 
           <div class="Project__details">
-            <div class="Project__btns">
-              <button class="Project__btn --uppercase">
-                <a :href="details.github">Github</a>
-              </button>
-              <button
-                class="Project__btn --uppercase"
-                :aria-disabled="!details.link"
-                :aria-label="!details.link ? 'Live link coming soon' : null"
+            <div class="Project__links">
+              <a
+                class="Project__link --uppercase"
+                :href="details.github"
+                :title="details.name + ' Github page'"
+                :aria-label="details.name + ' Github page'"
               >
-                <a
-                  :class="{ Project__linkTba: !details.link }"
-                  :href="details.link"
-                >
-                  Link
-                </a>
-              </button>
+                Github
+              </a>
+              <a
+                :class="{ Project__linkTba: !details.link }"
+                :href="details.link"
+                class="Project__link --uppercase"
+                :aria-disabled="!details.link"
+                :title="
+                  details.name +
+                    ' live project page' +
+                    (!details.link ? ' - Coming soon' : '')
+                "
+                :aria-label="
+                  details.name +
+                    ' live project page' +
+                    (!details.link ? ' - Coming soon' : '')
+                "
+              >
+                Link
+              </a>
             </div>
 
             <p class="Project__description">
@@ -43,21 +54,22 @@
                 class="Project__technology"
                 v-if="details.technologies.backend"
               >
-                <strong>Backend</strong>: {{ details.technologies.backend }}
+                <strong>Back-End</strong>: {{ details.technologies.backend }}
               </p>
               <p
                 class="Project__technology"
                 v-if="details.technologies.frontend"
               >
-                <strong>Frontend</strong>: {{ details.technologies.frontend }}
+                <strong>Front-End</strong>: {{ details.technologies.frontend }}
               </p>
             </section>
 
             <Accordion
               class="Project__accordion"
               :expand="expand"
-              :label="expand ? 'No More Spice' : 'The Spicy Stuff'"
-              @change="expand = !expand"
+              labelExpanded="No More Spice"
+              labelMinimized="The Spicy Stuff"
+              @change="handleChange"
               v-if="details.features || details.faq"
             >
               <template #content>
@@ -132,23 +144,21 @@
                 <p class="Project__descriptionShowcase">
                   Made with: <strong>{{ project.madeWith }}</strong>
                 </p>
-                <div class="Project__btns">
-                  <button class="Project__btn --uppercase">
-                    <a
-                      :href="project.github"
-                      :title="'Salmon\'s ' + project.name + ' Github page'"
-                    >
-                      Github
-                    </a>
-                  </button>
-                  <button class="Project__btn --uppercase">
-                    <a
-                      :href="project.link"
-                      :title="project.name + '\'s live project page'"
-                    >
-                      Link
-                    </a>
-                  </button>
+                <div class="Project__links">
+                  <a
+                    class="Project__link --uppercase"
+                    :href="project.github"
+                    :title="project.name + ' Github page'"
+                  >
+                    Github
+                  </a>
+                  <a
+                    class="Project__link --uppercase"
+                    :href="project.link"
+                    :title="project.name + ' live project page'"
+                  >
+                    Link
+                  </a>
                 </div>
               </section>
             </div>
@@ -186,6 +196,9 @@ export default {
           this.details = project;
         }
       });
+    },
+    handleChange() {
+      this.expand = !this.expand;
     }
   },
   created() {
@@ -228,13 +241,13 @@ export default {
   }
 }
 
-.Project__btns {
+.Project__links {
   display: flex;
   justify-content: space-evenly;
   margin: 1rem 0;
 }
 
-.Project__btn {
+.Project__link {
   font-size: 2.4rem;
 }
 
@@ -329,7 +342,7 @@ export default {
 }
 
 @media only screen and (max-width: 250px) {
-  .Project__btn {
+  .Project__link {
     font-size: 1.8rem;
   }
 }

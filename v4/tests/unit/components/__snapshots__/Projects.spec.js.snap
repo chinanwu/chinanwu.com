@@ -14,12 +14,21 @@ exports[`Projects renders 1`] = `
       Projects
     </h2>
   </header>
-  <arrow-nav-menu-stub />
-  <project-stub />
+  <arrow-nav-tabs-stub
+    aria-controls="project"
+    aria-labelledby="projectsHeader"
+  />
+  <project-stub
+    aria-live="polite"
+    id="project"
+  />
   <div
     class="Projects__arrowSelectorContainer"
   >
-    <arrow-selector-stub />
+    <arrow-selector-stub
+      aria-controls="project"
+      aria-labelledby="projectsHeader"
+    />
   </div>
 </section>
 `;

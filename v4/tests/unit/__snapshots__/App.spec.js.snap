@@ -2,6 +2,7 @@
 
 exports[`App behaviour removes flip prompt on card click 1`] = `
 <div
+  aria-live="polite"
   class="App__shell"
 >
   <transition-stub>
@@ -9,22 +10,21 @@ exports[`App behaviour removes flip prompt on card click 1`] = `
       class="App__start"
     >
       <card-stub />
-      <div
-        class="App__readMore"
+      <button
+        class="App__readMore --uppercase"
+        id="readMore"
+        tabindex="5"
       >
-        <div
+        <span
           class="App__bracket App__bracket--left"
+          role="presentation"
         />
-        <button
-          class="App__readMoreBtn --uppercase"
-          id="readMore"
-        >
-           Read More 
-        </button>
-        <div
+         Read More 
+        <span
           class="App__bracket App__bracket--right"
+          role="presentation"
         />
-      </div>
+      </button>
     </div>
   </transition-stub>
 </div>
@@ -32,6 +32,7 @@ exports[`App behaviour removes flip prompt on card click 1`] = `
 
 exports[`App behaviour switches to Main when click read more 1`] = `
 <div
+  aria-live="polite"
   class="App__shell"
 >
   <transition-stub>
@@ -39,22 +40,21 @@ exports[`App behaviour switches to Main when click read more 1`] = `
       class="App__start"
     >
       <card-stub />
-      <div
-        class="App__readMore"
+      <button
+        class="App__readMore --uppercase"
+        id="readMore"
+        tabindex="5"
       >
-        <div
+        <span
           class="App__bracket App__bracket--left"
+          role="presentation"
         />
-        <button
-          class="App__readMoreBtn --uppercase"
-          id="readMore"
-        >
-           Read More 
-        </button>
-        <div
+         Read More 
+        <span
           class="App__bracket App__bracket--right"
+          role="presentation"
         />
-      </div>
+      </button>
     </div>
   </transition-stub>
 </div>
@@ -62,6 +62,7 @@ exports[`App behaviour switches to Main when click read more 1`] = `
 
 exports[`App rendering renders 1`] = `
 <div
+  aria-live="polite"
   class="App__shell"
 >
   <transition-stub>
@@ -69,22 +70,21 @@ exports[`App rendering renders 1`] = `
       class="App__start"
     >
       <card-stub />
-      <div
-        class="App__readMore"
+      <button
+        class="App__readMore --uppercase"
+        id="readMore"
+        tabindex="5"
       >
-        <div
+        <span
           class="App__bracket App__bracket--left"
+          role="presentation"
         />
-        <button
-          class="App__readMoreBtn --uppercase"
-          id="readMore"
-        >
-           Read More 
-        </button>
-        <div
+         Read More 
+        <span
           class="App__bracket App__bracket--right"
+          role="presentation"
         />
-      </div>
+      </button>
     </div>
   </transition-stub>
 </div>
@@ -92,6 +92,7 @@ exports[`App rendering renders 1`] = `
 
 exports[`App rendering renders main screen 1`] = `
 <div
+  aria-live="polite"
   class="App__shell"
 >
   <transition-stub>
