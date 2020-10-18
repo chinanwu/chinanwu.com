@@ -37,7 +37,7 @@ jobs:
           cd dist
           FILE_NAME="index_v${GITHUB_RUN_NUMBER}.html"
           mv index.html $FILE_NAME
-          echo "::set-output name=indexFilename::$(FILE_NAME)"
+          echo "::set-output name=indexFilename::${FILE_NAME}"
       - name: Upload dist as artifact
         uses: actions/upload-artifact@v1
         with:
@@ -88,6 +88,7 @@ jobs:
           aws-region: ${{ secrets.AWS_REGION }}
       - name: Update distribution
         run: |
+          echo ${{needs.build.outputs.indexFilename}}
           aws cloudfront update-distribution --id ${{ secrets.AWS_DISTRIBUTION_ID }} \
           --default-root-object ${{needs.build.outputs.indexFilename}}
          
