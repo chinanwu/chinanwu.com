@@ -76,7 +76,7 @@ jobs:
 
   deploy:
     runs-on: ubuntu-latest
-    needs: upload
+    needs: [build, upload]
     
     steps:
       - uses: actions/checkout@v2
@@ -88,6 +88,7 @@ jobs:
           aws-region: ${{ secrets.AWS_REGION }}
       - name: Update distribution
         run: |
+          echo ${{needs.build.outputs.indexFilename}}
           aws cloudfront update-distribution --id ${{ secrets.DISTRIBUTION_ID }} \
           --default-root-object ${{needs.build.outputs.indexFilename}}
          
