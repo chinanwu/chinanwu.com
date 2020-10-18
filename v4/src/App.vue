@@ -1,89 +1,91 @@
 <template>
   <div class="App__shell">
-    <div v-if="!readMore" class="App__start">
-      <Card id="card" @click="showFlip = false">
-        <template #front>
-          <div class="App__cardFront">
-            <div class="App__cardPrompt" v-if="showFlip">
-              Click Me!
+    <transition name="fade" mode="out-in">
+      <div v-if="!readMore" class="App__start">
+        <Card id="card" @click="showFlip = false">
+          <template #front>
+            <div class="App__cardFront">
+              <div class="App__cardPrompt" v-if="showFlip">
+                Click Me!
+              </div>
+              <div class="App__cardFrontIcon">
+                <img
+                  :src="require('@/assets/images/self.png')"
+                  alt="Cartoon drawing of Salmon"
+                />
+              </div>
+              <header class="--uppercase">
+                <h1 class="App__cardName App__cardFirstName">
+                  Salmon<span class="App__cardFirstNameSub">(Chin-An)</span>
+                </h1>
+                <h1 class="App__cardName">Wu</h1>
+              </header>
             </div>
-            <div class="App__cardFrontIcon">
-              <img
-                :src="require('@/assets/images/self.png')"
-                alt="Cartoon drawing of Salmon"
-              />
-            </div>
-            <header class="--uppercase">
-              <h1 class="App__cardName App__cardFirstName">
-                Salmon<span class="App__cardFirstNameSub">(Chin-An)</span>
-              </h1>
-              <h1 class="App__cardName">Wu</h1>
-            </header>
-          </div>
-        </template>
-        <template #back>
-          <div class="App__back --uppercase">
-            <ul class="App__backList">
-              <li>They/Them</li>
-              <li><span class="App__backList--long">Software Dev</span></li>
-              <li>Toronto-Based</li>
-            </ul>
+          </template>
+          <template #back>
+            <div class="App__back --uppercase">
+              <ul class="App__backList">
+                <li>They/Them</li>
+                <li><span class="App__backList--long">Software Dev</span></li>
+                <li>Toronto-Based</li>
+              </ul>
 
-            <ul class="App__backLinks">
-              <li>
-                <a
-                  class="App__backLink"
-                  href="https://github.com/chinanwu"
-                  title="Salmon (Chin-An) Wu's github page"
-                >
-                  <img
-                    class="App__backIcon"
-                    :src="require('@/assets/images/github.png')"
-                    alt="Github logo"
-                  />
-                  <span class="App__backLabel">Github</span>
-                </a>
-              </li>
-              <li>
-                <a
-                  class="App__backLink"
-                  href="https://linkedin.com/in/chinanwu"
-                  title="Salmon (Chin-An) Wu's LinkedIn page"
-                >
-                  <img
-                    class="App__backIcon"
-                    :src="require('@/assets/images/linkedin.png')"
-                    alt="LinkedIn logo"
-                  />
-                  <span class="App__backLabel">LinkedIn</span>
-                </a>
-              </li>
-              <li>
-                <a
-                  class="App__backLink"
-                  href="mailto:cawudev@gmail.com"
-                  title="Salmon (Chin-An) Wu's email address"
-                >
-                  <img
-                    :src="require('@/assets/images/email.png')"
-                    alt="Email icon"
-                  />
-                  <span class="App__backLabel">Email</span>
-                </a>
-              </li>
-            </ul>
-          </div>
-        </template>
-      </Card>
-      <div class="App__readMore" @click="handleClick">
-        <div class="App__bracket App__bracket--left"></div>
-        <button id="readMore" class="App__readMoreBtn --uppercase">
-          Read More
-        </button>
-        <div class="App__bracket App__bracket--right"></div>
+              <ul class="App__backLinks">
+                <li>
+                  <a
+                    class="App__backLink"
+                    href="https://github.com/chinanwu"
+                    title="Salmon (Chin-An) Wu's github page"
+                  >
+                    <img
+                      class="App__backIcon"
+                      :src="require('@/assets/images/github.png')"
+                      alt="Github logo"
+                    />
+                    <span class="App__backLabel">Github</span>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    class="App__backLink"
+                    href="https://linkedin.com/in/chinanwu"
+                    title="Salmon (Chin-An) Wu's LinkedIn page"
+                  >
+                    <img
+                      class="App__backIcon"
+                      :src="require('@/assets/images/linkedin.png')"
+                      alt="LinkedIn logo"
+                    />
+                    <span class="App__backLabel">LinkedIn</span>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    class="App__backLink"
+                    href="mailto:cawudev@gmail.com"
+                    title="Salmon (Chin-An) Wu's email address"
+                  >
+                    <img
+                      :src="require('@/assets/images/email.png')"
+                      alt="Email icon"
+                    />
+                    <span class="App__backLabel">Email</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </template>
+        </Card>
+        <div class="App__readMore" @click="handleClick">
+          <div class="App__bracket App__bracket--left"></div>
+          <button id="readMore" class="App__readMoreBtn --uppercase">
+            Read More
+          </button>
+          <div class="App__bracket App__bracket--right"></div>
+        </div>
       </div>
-    </div>
-    <MainScreen v-else />
+      <MainScreen v-else />
+    </transition>
   </div>
 </template>
 
@@ -228,6 +230,16 @@ button {
 
 .App__shell {
   height: 100%;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
 }
 
 .App__start {
