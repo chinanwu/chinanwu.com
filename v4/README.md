@@ -9,17 +9,17 @@ First time using Vue for my personal site, and it was a fun one! This project wa
 ### Mobile Design 
 I started with mobile first! There are lots of reasons why (see the very bottom of the README), but for me, mainly, doing so makes it much easier to ensure my site can be responsive beautifully. 
 
-[!Screenshot](./other/mobile/mobile-overview.png "The mobile design journey")
+![Screenshot](./other/mobile/mobile-overview.png "The mobile design journey")
 
 To see higher-def photos, visit the `/other/mobile` folder within the repo
 
 ### Tablet Design 
-[!Screenshot](./other/tablet/tablet-overview.png "The tablet design journey")
+![Screenshot](./other/tablet/tablet-overview.png "The tablet design journey")
 
 To see higher-def photos, visit the `/other/tablet` folder within the repo
 
 ### Desktop Design 
-[!Screenshot](./other/desktop/desktop-overview.png "The desktop design journey")
+![Screenshot](./other/desktop/desktop-overview.png "The desktop design journey")
 
 To see higher-def photos, visit the `/other/desktop` folder within the repo
 

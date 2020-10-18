@@ -21,10 +21,15 @@
           />
         </div>
 
-        <FloatTextArea label="Content" />
+        <FloatTextArea label="Content" @change="handleBodyChange" />
 
         <div class="Contact__submit">
-          <input class="Contact__submitBtn" type="submit" value="Submit" />
+          <input
+            id="contactSubmit"
+            class="Contact__submitBtn"
+            type="submit"
+            value="Submit"
+          />
         </div>
       </form>
     </div>
@@ -95,6 +100,9 @@ export default {
     },
     handleSubjectChange(e) {
       this.subjectValue = e;
+    },
+    handleBodyChange(e) {
+      this.bodyValue = e;
     }
   }
 };
@@ -126,7 +134,7 @@ export default {
 
 .Contact__submit {
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
 }
 
 .Contact__submitBtn {

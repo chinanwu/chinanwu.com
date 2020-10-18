@@ -50,7 +50,6 @@ export default {
   },
   methods: {
     setCurrent(next) {
-      // this.current = next;
       this.$emit("change", next);
     },
     handleLeftArrow() {

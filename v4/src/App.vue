@@ -1,7 +1,7 @@
 <template>
   <div class="App__shell">
     <div v-if="!readMore" class="App__start">
-      <Card @click="showFlip = false">
+      <Card id="card" @click="showFlip = false">
         <template #front>
           <div class="App__cardFront">
             <div class="App__cardPrompt" v-if="showFlip">
@@ -77,7 +77,9 @@
       </Card>
       <div class="App__readMore" @click="handleClick">
         <div class="App__bracket App__bracket--left"></div>
-        <button class="App__readMoreBtn --uppercase">Read More</button>
+        <button id="readMore" class="App__readMoreBtn --uppercase">
+          Read More
+        </button>
         <div class="App__bracket App__bracket--right"></div>
       </div>
     </div>

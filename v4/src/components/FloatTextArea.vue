@@ -11,8 +11,8 @@
     </label>
     <textarea
       class="FloatTextArea__textarea"
-      :id="'floatInput-' + label"
-      :aria-labelledby="'floatInputLabel-' + label"
+      :id="'floatTextArea-' + label"
+      :aria-labelledby="'floatTextAreaLabel-' + label"
       v-model="inputValue"
       @focusin="handleFocusIn"
       @focusout="handleFocusOut"
@@ -35,6 +35,7 @@ export default {
       inputValue: ""
     };
   },
+  emits: ["change"],
   methods: {
     handleFocusIn() {
       this.float = true;
@@ -42,6 +43,8 @@ export default {
     handleFocusOut() {
       if (this.inputValue === "") {
         this.float = false;
+      } else {
+        this.$emit("change", this.inputValue);
       }
     }
   }

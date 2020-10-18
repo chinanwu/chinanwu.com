@@ -1,12 +1,20 @@
 <template>
   <nav class="TableOfContents --uppercase" aria-labelledby="toc">
-    <h2 class="headerLabel" id="toc">TABLE OF CONTENTS</h2>
-    <ol class="TableOfContents__list" tabindex="0" @keydown="handleKeyDown">
+    <h2 class="headerLabel" id="toc">Table of Contents</h2>
+    <ol
+      id="tableOfContents"
+      class="TableOfContents__list"
+      tabindex="0"
+      @keydown="handleKeyDown"
+    >
       <li v-for="(content, index) in contents" :key="'tOC-' + index">
         <strong>
-          <a :href="'#' + content.link" :title="content.title">{{
-            content.label
-          }}</a>
+          <a
+            class="--uppercase"
+            :href="'#' + content.link"
+            :title="content.title"
+            >{{ content.label }}</a
+          >
         </strong>
       </li>
     </ol>
@@ -14,6 +22,8 @@
 </template>
 
 <script>
+import validEvent from "@/functions/validEvent";
+
 export default {
   name: "TableOfContents",
   props: {
@@ -25,22 +35,20 @@ export default {
           value =>
             value.label &&
             value.link &&
+            value.title &&
+            value.focusId &&
             (typeof value.label === "string" ||
               value.label instanceof String) &&
-            (typeof value.link === "string" || value.link instanceof String)
+            (typeof value.link === "string" || value.link instanceof String) &&
+            (typeof value.focusId === "string" ||
+              value.focusId instanceof String) &&
+            (typeof value.title === "string" || value.title instanceof String)
         )
     }
   },
   methods: {
     handleKeyDown(event) {
-      if (
-        event?.key &&
-        !event.shiftKey &&
-        !event.ctrlKey &&
-        !event.altKey &&
-        !event.metaKey
-      ) {
-        // TODO: Look into implementing HOME and END? Perhaps
+      if (validEvent(event, [])) {
         if (/^[0-9]$/.test(event.key) && event.key <= this.contents.length) {
           event.preventDefault();
           document.location = `/#${this.contents[event.key - 1].link}`;
