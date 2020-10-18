@@ -33,20 +33,23 @@ jobs:
   build:
     runs-on: ubuntu-latest
     needs: test
-    outputs:
-      dist: ${{ steps.buildDist.outputs.dist }}
     steps:
       - uses: actions/checkout@v2
       - name: Install deps
         run: npm i
-      - id: buildDist
-        name: Build latest version
+      - name: Build latest version
         run: |
-              npm run build
-              cd dist
-              FILE_NAME="index_v${GITHUB_RUN_NUMBER}.html"
-              mv index.html $FILE_NAME
-              #echo "##[set-output name=dist;]$(cd ../dist)"
+          npm run build
+      - name: Set index name
+        run: |
+          cd dist
+          FILE_NAME="index_v${GITHUB_RUN_NUMBER}.html"
+          mv index.html $FILE_NAME
+      - name: Upload dist as artifact
+        uses: actions/upload-artifact@v1
+        with:
+          name: dist
+          path: dist
 
   upload:
     # The type of runner that the job will run on
@@ -65,7 +68,6 @@ jobs:
           aws-region: ${{ secrets.AWS_REGION }}
       - name: Remove old dist
         run: |
-            ls 
             aws s3 rm s3://${{ secrets.AWS_BUCKET }}/backup --recursive
             aws s3 mv s3://${{ secrets.AWS_BUCKET }} s3://${{ secrets.AWS_BUCKET }}/backup --recursive
       - name: Upload new dist
