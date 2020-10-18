@@ -9,7 +9,7 @@ env:
 
 defaults:
   run:
-    working-directory: $CURRENT_VERSION
+    working-directory: v4
 
 jobs:
   test:
