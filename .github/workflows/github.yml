@@ -44,8 +44,9 @@ jobs:
             npm i
             npm run build
             cd dist
-            FILE_NAME="index_${GITHUB_RUN_NUMBER}.html"
-            echo $FILE_NAME
+            FILE_NAME="index_v${GITHUB_RUN_NUMBER}.html"
+            mv index.html $FILE_NAME
+            ls
   upload:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
