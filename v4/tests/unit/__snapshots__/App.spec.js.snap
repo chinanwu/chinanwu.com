@@ -60,27 +60,29 @@ exports[`App rendering renders 1`] = `
 <div
   class="App__shell"
 >
-  <div
-    class="App__start"
-  >
-    <card-stub />
+  <transition-stub>
     <div
-      class="App__readMore"
+      class="App__start"
     >
+      <card-stub />
       <div
-        class="App__bracket App__bracket--left"
-      />
-      <button
-        class="App__readMoreBtn --uppercase"
-        id="readMore"
+        class="App__readMore"
       >
-         Read More 
-      </button>
-      <div
-        class="App__bracket App__bracket--right"
-      />
+        <div
+          class="App__bracket App__bracket--left"
+        />
+        <button
+          class="App__readMoreBtn --uppercase"
+          id="readMore"
+        >
+           Read More 
+        </button>
+        <div
+          class="App__bracket App__bracket--right"
+        />
+      </div>
     </div>
-  </div>
+  </transition-stub>
 </div>
 `;
 
