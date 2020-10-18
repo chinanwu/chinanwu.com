@@ -64,4 +64,4 @@ jobs:
       - name: Remove old dist
         run: aws s3 mv s3://${{ secrets.AWS_BUCKET }} s3://${{ secrets.AWS_BUCKET }}/backup --recursive
       - name: Upload new dist
-        run: aws s3 cp . s3://${{ secrets.AWS_BUCKET }} --recursive
+        run: aws s3 cp dist s3://${{ secrets.AWS_BUCKET }} --recursive
