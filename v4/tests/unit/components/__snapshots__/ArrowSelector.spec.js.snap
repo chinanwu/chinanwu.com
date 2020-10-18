@@ -1,67 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ArrowSelector behaviour does nothing on invalid keydown on left arrow 1`] = `
-<div
-  class="ArrowSelector"
->
-  <div
-    class="ArrowSelector__main"
-  >
-    <button
-      class="ArrowSelector__btn"
-      id="arrowSelectorLeft"
-    >
-       &lt; 
-    </button>
-    <span>
-      2 / 2
-    </span>
-    <button
-      class="ArrowSelector__btn"
-      id="arrowSelectorRight"
-    >
-       &gt; 
-    </button>
-  </div>
-  <div
-    class="ArrowSelector__label"
-  >
-    Current
-  </div>
-</div>
-`;
-
-exports[`ArrowSelector behaviour does nothing on invalid keydown on right arrow 1`] = `
-<div
-  class="ArrowSelector"
->
-  <div
-    class="ArrowSelector__main"
-  >
-    <button
-      class="ArrowSelector__btn"
-      id="arrowSelectorLeft"
-    >
-       &lt; 
-    </button>
-    <span>
-      2 / 2
-    </span>
-    <button
-      class="ArrowSelector__btn"
-      id="arrowSelectorRight"
-    >
-       &gt; 
-    </button>
-  </div>
-  <div
-    class="ArrowSelector__label"
-  >
-    Current
-  </div>
-</div>
-`;
-
 exports[`ArrowSelector behaviour selects next if click right arrow 1`] = `
 <div
   class="ArrowSelector"
@@ -70,15 +8,19 @@ exports[`ArrowSelector behaviour selects next if click right arrow 1`] = `
     class="ArrowSelector__main"
   >
     <button
+      aria-label="Select previous project"
       class="ArrowSelector__btn"
       id="arrowSelectorLeft"
     >
        &lt; 
     </button>
-    <span>
+    <span
+      aria-labelledby="arrowSelectorLabel"
+    >
       1 / 2
     </span>
     <button
+      aria-label="Select next project"
       class="ArrowSelector__btn"
       id="arrowSelectorRight"
     >
@@ -87,68 +29,7 @@ exports[`ArrowSelector behaviour selects next if click right arrow 1`] = `
   </div>
   <div
     class="ArrowSelector__label"
-  >
-    Current
-  </div>
-</div>
-`;
-
-exports[`ArrowSelector behaviour selects next if enter press right arrow 1`] = `
-<div
-  class="ArrowSelector"
->
-  <div
-    class="ArrowSelector__main"
-  >
-    <button
-      class="ArrowSelector__btn"
-      id="arrowSelectorLeft"
-    >
-       &lt; 
-    </button>
-    <span>
-      2 / 2
-    </span>
-    <button
-      class="ArrowSelector__btn"
-      id="arrowSelectorRight"
-    >
-       &gt; 
-    </button>
-  </div>
-  <div
-    class="ArrowSelector__label"
-  >
-    Current
-  </div>
-</div>
-`;
-
-exports[`ArrowSelector behaviour selects next if space press right arrow 1`] = `
-<div
-  class="ArrowSelector"
->
-  <div
-    class="ArrowSelector__main"
-  >
-    <button
-      class="ArrowSelector__btn"
-      id="arrowSelectorLeft"
-    >
-       &lt; 
-    </button>
-    <span>
-      2 / 2
-    </span>
-    <button
-      class="ArrowSelector__btn"
-      id="arrowSelectorRight"
-    >
-       &gt; 
-    </button>
-  </div>
-  <div
-    class="ArrowSelector__label"
+    id="arrowSelectorLabel"
   >
     Current
   </div>
@@ -163,15 +44,19 @@ exports[`ArrowSelector behaviour selects prev if click left arrow 1`] = `
     class="ArrowSelector__main"
   >
     <button
+      aria-label="Select previous project"
       class="ArrowSelector__btn"
       id="arrowSelectorLeft"
     >
        &lt; 
     </button>
-    <span>
+    <span
+      aria-labelledby="arrowSelectorLabel"
+    >
       2 / 2
     </span>
     <button
+      aria-label="Select next project"
       class="ArrowSelector__btn"
       id="arrowSelectorRight"
     >
@@ -180,68 +65,7 @@ exports[`ArrowSelector behaviour selects prev if click left arrow 1`] = `
   </div>
   <div
     class="ArrowSelector__label"
-  >
-    Current
-  </div>
-</div>
-`;
-
-exports[`ArrowSelector behaviour selects prev if enter press left arrow 1`] = `
-<div
-  class="ArrowSelector"
->
-  <div
-    class="ArrowSelector__main"
-  >
-    <button
-      class="ArrowSelector__btn"
-      id="arrowSelectorLeft"
-    >
-       &lt; 
-    </button>
-    <span>
-      1 / 2
-    </span>
-    <button
-      class="ArrowSelector__btn"
-      id="arrowSelectorRight"
-    >
-       &gt; 
-    </button>
-  </div>
-  <div
-    class="ArrowSelector__label"
-  >
-    Current
-  </div>
-</div>
-`;
-
-exports[`ArrowSelector behaviour selects prev if space press left arrow 1`] = `
-<div
-  class="ArrowSelector"
->
-  <div
-    class="ArrowSelector__main"
-  >
-    <button
-      class="ArrowSelector__btn"
-      id="arrowSelectorLeft"
-    >
-       &lt; 
-    </button>
-    <span>
-      1 / 2
-    </span>
-    <button
-      class="ArrowSelector__btn"
-      id="arrowSelectorRight"
-    >
-       &gt; 
-    </button>
-  </div>
-  <div
-    class="ArrowSelector__label"
+    id="arrowSelectorLabel"
   >
     Current
   </div>
@@ -256,15 +80,19 @@ exports[`ArrowSelector rendering renders ArrowSelector 1`] = `
     class="ArrowSelector__main"
   >
     <button
+      aria-label="Select previous project"
       class="ArrowSelector__btn"
       id="arrowSelectorLeft"
     >
        &lt; 
     </button>
-    <span>
+    <span
+      aria-labelledby="arrowSelectorLabel"
+    >
       1 / 2
     </span>
     <button
+      aria-label="Select next project"
       class="ArrowSelector__btn"
       id="arrowSelectorRight"
     >
@@ -273,6 +101,7 @@ exports[`ArrowSelector rendering renders ArrowSelector 1`] = `
   </div>
   <div
     class="ArrowSelector__label"
+    id="arrowSelectorLabel"
   >
     Current
   </div>

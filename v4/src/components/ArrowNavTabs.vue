@@ -1,22 +1,23 @@
 <template>
   <ul
-    class="ArrowNavMenu"
-    role="menu"
+    class="ArrowNavTabs"
+    role="tablist"
     :aria-activedescendant="activeDescendant"
   >
     <li
-      class="ArrowNavMenu__itemContainer"
+      class="ArrowNavTabs__itemContainer"
       v-for="(item, index) in items"
       :key="'aNM-' + index"
-      role="menuitem"
       :id="'aNM-' + index + '-' + item"
     >
       <button
         :id="'aNM-btn-' + index"
-        class="ArrowNavMenu__item --uppercase"
-        :class="{ 'ArrowNavMenu__item--selected': selected === index }"
+        class="ArrowNavTabs__item --uppercase"
+        :class="{ 'ArrowNavTabs__item--selected': selected === index }"
         @click="handleClick(index)"
         @keydown="handleKeyDown"
+        role="tab"
+        :aria-selected="selected === index"
       >
         {{ item }}
       </button>
@@ -25,12 +26,16 @@
 </template>
 
 <script>
-// TODO: role menu vs menubar - Dynamic setting via window size maybe?
+// TODO:
+// https://www.w3.org/TR/wai-aria-practices-1.1/#kbd_selection_follows_focus
+// - I've opted to not have selection follow focus, but need to think more if this is the correct approach
+// - There is no selection follow focus for tabbing but there is for arrow keys.
+// - Need to figure out if this is the correct approach
 
 import validEvent from "@/functions/validEvent";
 
 export default {
-  name: "ArrowNavMenu",
+  name: "ArrowNavTabs",
   props: {
     items: {
       type: Array,
@@ -43,6 +48,10 @@ export default {
     active: {
       type: String,
       default: null // will be computed as first item
+    },
+    focusActive: {
+      type: Boolean,
+      default: true
     }
   },
   computed: {
@@ -56,6 +65,9 @@ export default {
   methods: {
     setSelected(i) {
       this.$emit("selected", this.items[i]);
+    },
+    focusSelected() {
+      document.getElementById("aNM-btn-" + this.selected).focus();
     },
     handleClick(i) {
       this.setSelected(i);
@@ -114,6 +126,11 @@ export default {
       }
     }
   },
+  updated() {
+    if (this.focusActive) {
+      this.focusSelected();
+    }
+  },
   emits: ["selected"]
 };
 </script>
@@ -121,19 +138,19 @@ export default {
 <style lang="less" scoped>
 @import "../styling/colours.less";
 
-.ArrowNavMenu {
+.ArrowNavTabs {
   display: flex;
   justify-content: space-evenly;
   font: inherit;
   margin-bottom: 2rem; // TODO figure out responsive
 }
 
-.ArrowNavMenu__itemContainer {
+.ArrowNavTabs__itemContainer {
   display: flex;
   justify-content: center;
 }
 
-.ArrowNavMenu__item {
+.ArrowNavTabs__item {
   font-size: 3.6rem;
   transition: all 0.2s;
   line-height: 150%;
@@ -141,12 +158,11 @@ export default {
 
   &:focus,
   &:hover {
-    //text-decoration: underline;
     color: @blue;
   }
 }
 
-.ArrowNavMenu__item--selected {
+.ArrowNavTabs__item--selected {
   color: @blue;
 
   &::before {
@@ -156,12 +172,6 @@ export default {
     animation: fadeIn 0.3s;
     padding: 0 1rem;
     border: none;
-  }
-}
-
-@media (prefers-reduced-motion) {
-  .ArrowNavMenu__item--selected::before {
-    animation: none;
   }
 }
 
@@ -177,37 +187,37 @@ export default {
 }
 
 @media only screen and (max-width: 834px) {
-  .ArrowNavMenu__item {
+  .ArrowNavTabs__item {
     font-size: 3rem;
   }
 }
 
 @media only screen and (max-width: 700px) {
-  .ArrowNavMenu__item {
+  .ArrowNavTabs__item {
     font-size: 2.8rem;
   }
 }
 
 @media only screen and (max-width: 625px) {
-  .ArrowNavMenu {
+  .ArrowNavTabs {
     flex-direction: column;
   }
 
-  .ArrowNavMenu__item {
+  .ArrowNavTabs__item {
     width: 80%;
     font-size: 3.6rem;
   }
 }
 
 @media only screen and (max-width: 510px) {
-  .ArrowNavMenu__item {
+  .ArrowNavTabs__item {
     font-size: 3rem;
   }
 }
 
 // iPhone SE
 @media only screen and (max-width: 320px) {
-  .ArrowNavMenu__item {
+  .ArrowNavTabs__item {
     font-size: 2.6rem;
   }
 }

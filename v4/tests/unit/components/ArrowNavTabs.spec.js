@@ -1,10 +1,10 @@
 import { shallowMount } from "@vue/test-utils";
-import ArrowNavMenu from "@/components/ArrowNavMenu.vue";
+import ArrowNavTabs from "@/components/ArrowNavTabs.vue";
 
-describe("ArrowNavMenu", () => {
+describe("ArrowNavTabs", () => {
   describe("rendering", () => {
-    it("renders ArrowNavMenu", () => {
-      const wrapper = shallowMount(ArrowNavMenu, {
+    it("renders ArrowNavTabs", () => {
+      const wrapper = shallowMount(ArrowNavTabs, {
         props: {
           items: ["One", "Two"]
         }
@@ -14,8 +14,8 @@ describe("ArrowNavMenu", () => {
       expect(wrapper.vm.activeDescendant).toBe("aNM-0-One");
     });
 
-    it("renders ArrowNavMenu with non default active", () => {
-      const wrapper = shallowMount(ArrowNavMenu, {
+    it("renders ArrowNavTabs with non default active", () => {
+      const wrapper = shallowMount(ArrowNavTabs, {
         props: {
           items: ["One", "Two"],
           active: "Two"
@@ -27,7 +27,7 @@ describe("ArrowNavMenu", () => {
 
   describe("behaviour", () => {
     it("sets selected on click", () => {
-      const wrapper = shallowMount(ArrowNavMenu, {
+      const wrapper = shallowMount(ArrowNavTabs, {
         props: {
           items: ["One", "Two"],
           active: "Two"
@@ -44,7 +44,7 @@ describe("ArrowNavMenu", () => {
 
     it("selects next item with arrow down", () => {
       const preventDefault = jest.fn();
-      const wrapper = shallowMount(ArrowNavMenu, {
+      const wrapper = shallowMount(ArrowNavTabs, {
         props: {
           items: ["One", "Two"]
         }
@@ -64,7 +64,7 @@ describe("ArrowNavMenu", () => {
 
     it("selects next item with arrow right", () => {
       const preventDefault = jest.fn();
-      const wrapper = shallowMount(ArrowNavMenu, {
+      const wrapper = shallowMount(ArrowNavTabs, {
         props: {
           items: ["One", "Two"],
           active: "Two"
@@ -85,7 +85,7 @@ describe("ArrowNavMenu", () => {
 
     it("selects previous item with arrow up", () => {
       const preventDefault = jest.fn();
-      const wrapper = shallowMount(ArrowNavMenu, {
+      const wrapper = shallowMount(ArrowNavTabs, {
         props: {
           items: ["One", "Two"],
           active: "Two"
@@ -106,7 +106,7 @@ describe("ArrowNavMenu", () => {
 
     it("selects previous item with arrow left", () => {
       const preventDefault = jest.fn();
-      const wrapper = shallowMount(ArrowNavMenu, {
+      const wrapper = shallowMount(ArrowNavTabs, {
         props: {
           items: ["One", "Two"]
         }
@@ -126,7 +126,7 @@ describe("ArrowNavMenu", () => {
 
     it("selects first item in items with home", () => {
       const preventDefault = jest.fn();
-      const wrapper = shallowMount(ArrowNavMenu, {
+      const wrapper = shallowMount(ArrowNavTabs, {
         props: {
           items: ["One", "Two"],
           active: "Two"
@@ -147,7 +147,7 @@ describe("ArrowNavMenu", () => {
 
     it("selects last item in items with end", () => {
       const preventDefault = jest.fn();
-      const wrapper = shallowMount(ArrowNavMenu, {
+      const wrapper = shallowMount(ArrowNavTabs, {
         props: {
           items: ["One", "Two"]
         }
@@ -166,7 +166,7 @@ describe("ArrowNavMenu", () => {
     });
 
     it("selects next item with letter starting with key pressed", () => {
-      const wrapper = shallowMount(ArrowNavMenu, {
+      const wrapper = shallowMount(ArrowNavTabs, {
         props: {
           items: ["this", "That", "There"]
         }
@@ -183,7 +183,7 @@ describe("ArrowNavMenu", () => {
     });
 
     it("selects next item with letter starting with key pressed circular", () => {
-      const wrapper = shallowMount(ArrowNavMenu, {
+      const wrapper = shallowMount(ArrowNavTabs, {
         props: {
           items: ["this", "That", "There"],
           active: "There"
@@ -202,7 +202,7 @@ describe("ArrowNavMenu", () => {
 
     it("does nothing if extra keys are pressed", () => {
       const preventDefault = jest.fn();
-      const wrapper = shallowMount(ArrowNavMenu, {
+      const wrapper = shallowMount(ArrowNavTabs, {
         props: {
           items: ["One", "Two"]
         }
@@ -249,7 +249,7 @@ describe("ArrowNavMenu", () => {
     });
 
     it("does nothing if invalid event", () => {
-      const wrapper = shallowMount(ArrowNavMenu, {
+      const wrapper = shallowMount(ArrowNavTabs, {
         props: {
           items: ["One", "Two"]
         }
@@ -272,7 +272,7 @@ describe("ArrowNavMenu", () => {
     it("throws error if not valid items array", () => {
       const valid = ["test", "here", "loooong"];
       const invalid = [0];
-      const validator = ArrowNavMenu.props.items.validator;
+      const validator = ArrowNavTabs.props.items.validator;
       expect(validator(valid)).toBe(true);
       expect(validator(invalid)).toBe(false);
     });

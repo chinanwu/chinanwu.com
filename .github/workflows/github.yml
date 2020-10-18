@@ -4,6 +4,9 @@ on:
   push:
     branches: [ main ]
 
+env:
+  CURRENT_VERSION: v4
+
 defaults:
   run:
     working-directory: v4
@@ -40,7 +43,7 @@ jobs:
         uses: actions/upload-artifact@v1
         with:
           name: dist
-          path: v4/dist
+          path: $CURRENT_VERSION/dist
           # retention-days: 1
           # Auto deleted after 90 days:
           # https://docs.github.com/en/free-pro-team@latest/actions/reference/usage-limits-billing-and-administration#artifact-and-log-retention-policy
@@ -54,7 +57,7 @@ jobs:
         uses: actions/download-artifact@v2
         with:
           name: dist
-          path: v4/dist
+          path: $CURRENT_VERSION/dist
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:

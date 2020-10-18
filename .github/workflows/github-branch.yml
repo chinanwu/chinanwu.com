@@ -1,0 +1,22 @@
+name: CI-Branch
+
+on:
+  push:
+    branches-ignore: [ main ]
+
+env:
+  CURRENT_VERSION: v4
+
+defaults:
+  run:
+    working-directory: v4
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install deps
+        run: npm i
+      - name: Test
+        run: npm run test:unit

@@ -54,13 +54,15 @@ exports[`Contact behaviour sets input values 1`] = `
     >
       <li>
         <a
+          aria-label="Salmon (Chin-An) Wu's git-hub page"
           class="Contact__additionalLink"
           href="https://github.com/chinanwu"
           title="Salmon (Chin-An) Wu's github page"
         >
           <img
-            alt="Github logo"
+            alt="Git-hub logo"
             class="Contact__additionalLinkIcon"
+            role="presentation"
             src=""
           />
           <span
@@ -72,13 +74,15 @@ exports[`Contact behaviour sets input values 1`] = `
       </li>
       <li>
         <a
+          aria-label="Salmon (Chin-An) Wu's Linked-In page"
           class="Contact__additionalLink"
           href="https://linkedin.com/in/chinanwu"
-          title="Salmon (Chin-An) Wu's LinkedIn page"
+          title="Salmon (Chin-An) Wu's Linked-In page"
         >
           <img
-            alt="LinkedIn logo"
+            alt="Linked-In logo"
             class="Contact__additionalLinkIcon"
+            role="presentation"
             src=""
           />
           <span
@@ -147,13 +151,15 @@ exports[`Contact rendering renders 1`] = `
     >
       <li>
         <a
+          aria-label="Salmon (Chin-An) Wu's git-hub page"
           class="Contact__additionalLink"
           href="https://github.com/chinanwu"
           title="Salmon (Chin-An) Wu's github page"
         >
           <img
-            alt="Github logo"
+            alt="Git-hub logo"
             class="Contact__additionalLinkIcon"
+            role="presentation"
             src=""
           />
           <span
@@ -165,13 +171,15 @@ exports[`Contact rendering renders 1`] = `
       </li>
       <li>
         <a
+          aria-label="Salmon (Chin-An) Wu's Linked-In page"
           class="Contact__additionalLink"
           href="https://linkedin.com/in/chinanwu"
-          title="Salmon (Chin-An) Wu's LinkedIn page"
+          title="Salmon (Chin-An) Wu's Linked-In page"
         >
           <img
-            alt="LinkedIn logo"
+            alt="Linked-In logo"
             class="Contact__additionalLinkIcon"
+            role="presentation"
             src=""
           />
           <span
